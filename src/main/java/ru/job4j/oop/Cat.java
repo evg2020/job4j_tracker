@@ -21,7 +21,7 @@ public class Cat {
         gav.show();
         Cat black = new Cat();
         black.eat("fish");
-        black.giveNick(" Black Cat");
+        black.giveNick(" Black ");
         black.show();
 
 
