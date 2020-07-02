@@ -1,4 +1,4 @@
-package ru.job4j.ru.job4j.condition;
+package ru.job4j.oop;
 
 //2.1. Рефакторинг - Расстояние между точками. [#299291]
 import static java.lang.Math.sqrt;
