@@ -8,7 +8,7 @@ import org.junit.Test;
 public class TriangleTest {
 
     @Test
-    public void period() {
+    public void triangleSize8Then8() {
         Point a = new Point(0, 0);
         Point b = new Point(4, 0);
         Point c = new Point(0, 4);

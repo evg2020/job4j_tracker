@@ -18,10 +18,7 @@ public class Triangle {
 
     public boolean exist(double a, double b, double c) {
                 boolean exist = false;
-            if ((a + b) > c && (a + c) > b && (c + b) > a) {
-                exist = true;
-            }
-            return exist;
+            return  ((a + b) > c && (a + c) > b && (c + b) > a);
 
     }
 
