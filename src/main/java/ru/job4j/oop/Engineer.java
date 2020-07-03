@@ -8,7 +8,7 @@ public class Engineer extends Profession {
 
 
     public static void main(String[] args) {
-        Engineer eng01 = new Engineer("SPBGTU");
+        Engineer eng01 = new Engineer("Jeny", "Ivanova", true, "01.01.2200");
         System.out.println(eng01.getName());
     }
 }
