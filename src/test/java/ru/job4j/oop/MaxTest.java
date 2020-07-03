@@ -10,17 +10,17 @@ public class MaxTest {
     @Test
     public void max4Namber() {
         Max res = new Max();
-        double resultat = res.max(2,3,4,6);
+        double result = res.max(2,3,4,6);
         double expect = 6;
-        assertThat(resultat, is(expect));
+        assertThat(result, is(expect));
     }
 
     @Test
     public void max3Namber() {
         Max res = new Max();
-        double resultat = res.max(2,3,4);
+        double result = res.max(2,3,4);
         double expect = 4;
-        assertThat(resultat, is(expect));
+        assertThat(result, is(expect));
     }
 
 }
