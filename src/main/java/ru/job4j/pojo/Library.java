@@ -1,4 +1,5 @@
 package ru.job4j.pojo;
+//3. Массивы и модели. [#299314]
 
 import java.time.format.ResolverStyle;
 
@@ -36,7 +37,7 @@ public class Library {
 
         for (int i = 0; i < books.length; i++) {
             Book bookTemp = books[i];
-            if (bookTemp.getName() == "Clean code") {
+            if (bookTemp.getName().equals("Clean code")) {
                 System.out.println(bookTemp.getName());
                 }
             }
