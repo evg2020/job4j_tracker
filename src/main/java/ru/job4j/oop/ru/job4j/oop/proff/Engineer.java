@@ -12,7 +12,6 @@ public class Engineer extends Profession {
         return this.jobName;
     }
 
-
     public static void main(String[] args) {
         Engineer eng01 = new Engineer("Evgenii", "Ivanova", true, "01.01.2200", "Programmer");
         System.out.println(eng01.getName());
