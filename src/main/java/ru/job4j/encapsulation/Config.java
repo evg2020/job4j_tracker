@@ -23,16 +23,4 @@ public class Config {
         return key;
     }
 
-    public static class Police {
-        public static void main(String[] args) {
-            License license = new License();
-            license.owner = "Petr Arsentev";
-            String c = license.owner;
-            license.setModel("Toyota");
-            license.setCode("xx111x");
-            license.setCreated(new Date());
-
-            System.out.println(c);
-        }
-    }
 }
