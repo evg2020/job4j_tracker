@@ -1,9 +1,9 @@
-package ru.job4j.oop;
+package ru.job4j.oop.ru.job4j.oop.proff;
 
 public class Engineer extends Profession {
     private String jobName;
 
-    public Engineer(String name, String surname, boolean education, String birthday,String job) {
+    public Engineer(String name, String surname, boolean education, String birthday, String job) {
         super(name, surname, education, birthday);
         this.jobName = job;
     }
