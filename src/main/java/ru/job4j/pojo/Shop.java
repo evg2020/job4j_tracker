@@ -1,5 +1,7 @@
 package ru.job4j.pojo;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Shop {
     public static int indexOfNull(Product[] products) {
 
@@ -19,8 +21,14 @@ public class Shop {
             Product[] products = new Product[5];
 
             products[0] = new Product("Milk", 10);
-            products[1] = new Product("Bread", 4);
+            products[1] = new Product("Milk", 10);
             products[2] = new Product("Egg", 19);
+//        boolean eq = products[0] == products[1];
+        String a = "abc";
+        String b = "abc";
+        boolean eq = a == b;
+        //System.out.println("сравнение " + eq);
+        System.out.println(eq);
 
        for (int i = 0; i < products.length; i++) {
            Product product = products[i];
@@ -33,4 +41,5 @@ public class Shop {
         int resOfNull = indexOfNull(products);
                 System.out.println(resOfNull);
         }
+
 }
