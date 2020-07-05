@@ -13,6 +13,7 @@ public class Replace {
         tracker.add(item01);
         tracker.add(item01);
 
+        int len = tracker.length;
         System.out.println(tracker[1].length);
     }
 }
