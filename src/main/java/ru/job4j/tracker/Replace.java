@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLOutput;
+
 public class Replace {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class Replace {
         tracker.add(item01);
 
         int len = tracker.length;
+        System.out.println(t);
         System.out.println(tracker[1].length);
     }
 }
