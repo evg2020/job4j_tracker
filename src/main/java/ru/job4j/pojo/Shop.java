@@ -24,11 +24,6 @@ public class Shop {
             products[1] = new Product("Milk", 10);
             products[2] = new Product("Egg", 19);
 //        boolean eq = products[0] == products[1];
-        String a = "abc";
-        String b = "abc";
-        boolean eq = a == b;
-        //System.out.println("сравнение " + eq);
-        System.out.println(eq);
 
        for (int i = 0; i < products.length; i++) {
            Product product = products[i];
