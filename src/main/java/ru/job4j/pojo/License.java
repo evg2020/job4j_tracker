@@ -9,19 +9,18 @@ public class License {
     private String code;
     private Date created;
 
-/*    @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         License license = (License) o;
-        return Objects.equals(model, license.model) &&
-                Objects.equals(code, license.code);
+        return    Objects.equals(code, license.code);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(model, code);
-    }*/
+    }
 
     public String getOwner() {
         return owner;
