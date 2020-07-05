@@ -49,10 +49,11 @@ public class License {
     }
 
     //переопределяем метод для сравнения определенных полей обьекта класса License;
-    @Override
+
+/*
     public boolean equals(License that) {
         return this.code == that.code;
-        }
+        }*/
 
     public static void main(String[] args) {
         License lic01 = new License();
