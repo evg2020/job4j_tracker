@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
-public class StartUI  {
+public class Replace {
+
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
 
@@ -12,13 +13,8 @@ public class StartUI  {
         tracker.add(item01);
         tracker.add(item01);
 
-        System.out.println(tracker[1].getName);
-
-
-
-
-
-
+        System.out.println(tracker[1].length);
     }
-
 }
+
+

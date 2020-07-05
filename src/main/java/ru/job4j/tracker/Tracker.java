@@ -37,9 +37,9 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] arrayFindAll = new Item[items.length];
+        Item[] arrayFindAll = new Item[size];
         int size = 0;
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < size; i++) {
             Item name = items[i];
             if (name != null) {
                 arrayFindAll[size] = name;
