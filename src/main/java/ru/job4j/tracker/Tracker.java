@@ -7,6 +7,10 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    public Item[] getItems() {
+        return items;
+    }
+
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
@@ -26,17 +30,25 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        Item[] fixname = new Item[items.length];
-        for (int i = 0; i < items.length; i++) {
+        Item[] sameName = new Item[size];
+        int nameFix = 0;
+        for (int i = 0; i < size; i++) {
             Item item = items[i];
-            if (item.getName() == key) {
-                fixname[i] = item;
+            if (item.getName().equals(key)) {
+                sameName[i] = item;
+                nameFix++;
             }
         }
-        return fixname;
+        return Arrays.copyOf(sameName, nameFix);
     }
 
     public Item[] findAll() {
+        return Arrays.copyOf(items, size);
+    }
+}
+
+// тот же метод но длиннее
+    /*public Item[] findAll() {
         Item[] arrayFindAll = new Item[size];
         int size = 0;
         for (int i = 0; i < size; i++) {
@@ -49,4 +61,4 @@ public class Tracker {
        arrayFindAll = Arrays.copyOf(arrayFindAll, size);
         return arrayFindAll;
     }
-}
+}*/

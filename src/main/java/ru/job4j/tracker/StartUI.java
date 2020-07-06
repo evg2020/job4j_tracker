@@ -7,18 +7,31 @@ public class StartUI  {
         Item item01 = new Item();
         item01.setName("Ivan");
         Item item02 = new Item();
-        item01.setName("Petr");
+        item02.setName("Petr");
+        Item item03 = new Item();
+        item03.setName("Slava");
+        Item item04 = new Item();
+        item03.setName("Vitalick");
+
+
+
 
         tracker.add(item01);
-        tracker.add(item01);
+        tracker.add(item02);
+        tracker.add(item03);
 
-        System.out.println(tracker[1].getName);
+        tracker.findAll();
 
+        System.out.println("Cписок заявок");
 
+        for (int i = 0; i < tracker.findAll().length; i++) {
+            System.out.println(tracker.getItems()[i].getName());
+        }
 
+        // метод findById и найденный Item выведите на консоль
 
-
-
+        int findId = 3;
+        System.out.println("метод findById = " + findId + " и найденный Item выведите на консоль");
+        System.out.println(tracker.findById(findId).getName());
     }
-
 }
