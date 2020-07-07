@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
-public class StartUI  {
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class StartUI {
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
 
@@ -11,18 +14,19 @@ public class StartUI  {
         Item item03 = new Item();
         item03.setName("Slava");
         Item item04 = new Item();
-        item03.setName("Vitalick");
-
-
+        item04.setName("Vitalick");
 
 
         tracker.add(item01);
         tracker.add(item02);
         tracker.add(item03);
+        tracker.add(item04);
 
         tracker.findAll();
 
         System.out.println("Cписок заявок");
+
+//        System.out.println(tracker.getItems()[0].getName());
 
         for (int i = 0; i < tracker.findAll().length; i++) {
             System.out.println(tracker.getItems()[i].getName());
@@ -35,6 +39,15 @@ public class StartUI  {
         System.out.println(tracker.findById(findId).getName());
 
 
+// метод delete удаляет элемент
+        int del = 4;
+        tracker.delete(del);
 
+        System.out.println();
+        System.out.println("удален элемент с id = " + del );
+        for (int i = 0; i < tracker.findAll().length; i++) {
+            System.out.println(tracker.getItems()[i].getName());
+
+        }
     }
 }
