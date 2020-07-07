@@ -33,5 +33,8 @@ public class StartUI  {
         int findId = 3;
         System.out.println("метод findById = " + findId + " и найденный Item выведите на консоль");
         System.out.println(tracker.findById(findId).getName());
+
+
+
     }
 }
