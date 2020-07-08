@@ -65,18 +65,11 @@ public class Tracker {
          boolean res = false;
          int index = indexOf(id);
          items[index] = null;
-         System.arraycopy(items, index + 1, items, index, size - index);
-         items[size - 1] = null;
-         size--;
-
-         for (int i = 0; i < size; i++) {
-             Item item = items[i];
-             if (item == null) {
-                 res = false;
-                 break;
-             } else {
-                 res = true;
-             }
+         if (index != -1) {
+             System.arraycopy(items, index + 1, items, index, size - index);
+             items[size - 1] = null;
+             size--;
+             res = true;
          }
          return res;
      }
