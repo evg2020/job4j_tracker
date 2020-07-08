@@ -49,5 +49,13 @@ public class StartUI {
             System.out.println(tracker.getItems()[i].getName());
 
         }
+
+        System.out.println();
+            String[] names = {"Petr", null, "Ivan", "Stepan", "Fedor", "Vasia", "Vas"};
+            String[] names02 = names;
+            System.arraycopy(names, 2, names02, 1, 5);
+            System.out.println(Arrays.toString(names02));
+
+
     }
 }
