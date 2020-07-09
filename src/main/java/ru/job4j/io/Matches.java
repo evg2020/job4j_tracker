@@ -25,7 +25,6 @@ public class Matches {
                 System.out.println("количество спичек допустимое 1 или 2 или 3");
             }
         }
-
         System.out.println("Выиграл игрок " + n % 2);
     }
 }
