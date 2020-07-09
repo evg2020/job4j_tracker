@@ -17,7 +17,7 @@ public class Matches {
             }
 
             int select = Integer.valueOf(input.nextLine());
-            if ( select <= 3 && select > 0) {
+            if (select <= 3 && select > 0) {
                 remaider = remaider - select;
                 System.out.println("Остаток " + remaider);
                 n++;
