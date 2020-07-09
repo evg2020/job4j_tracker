@@ -18,7 +18,7 @@ public class Matches {
                 System.out.println("количество спичек допустимое 1 или 2 или 3");
             }
         }
-//        System.out.println("Остаток " + (remaider - select);
+
         System.out.println("Ваш оппонент выиграл потому, что он забирает спички " + remaider + " шт");
     }
 }
