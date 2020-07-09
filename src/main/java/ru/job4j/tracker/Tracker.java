@@ -19,15 +19,15 @@ public class Tracker {
 
     public Item[] findByName(String key) {
         Item[] sameName = new Item[size];
-        int nameFix = 0;
+        int sizeFix = 0;
         for (int i = 0; i < size; i++) {
             Item item = items[i];
             if (item.getName().equals(key)) {
                 sameName[i] = item;
-                nameFix++;
+                size++;
             }
         }
-        return Arrays.copyOf(sameName, nameFix);
+        return Arrays.copyOf(sameName, sizeFix);
     }
 
     public Item[] findAll() {
@@ -35,10 +35,13 @@ public class Tracker {
     }
 
      private  int indexOf(int id) {
-        int res = 1;
+        int res = -1;
          for (int i = 0; i < size; i++) {
              if (items[i].getId() == id) {
                  res = i;
+                 break;
+             } else {
+                 System.out.println("Can not find this id");
                  break;
              }
          }
@@ -73,6 +76,7 @@ public class Tracker {
          }
          return res;
      }
+
 }
 
 // тот же метод но длиннее
