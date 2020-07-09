@@ -17,14 +17,14 @@ public class Tracker {
         return item;
     }
 
-    public Item[] findByName(String key) {
+    public Item[] findByName(String name) {
         Item[] sameName = new Item[size];
         int sizeFix = 0;
         for (int i = 0; i < size; i++) {
             Item item = items[i];
-            if (item.getName().equals(key)) {
+            if (item.getName().equals(name)) {
                 sameName[i] = item;
-                size++;
+                sizeFix++;
             }
         }
         return Arrays.copyOf(sameName, sizeFix);
@@ -39,9 +39,6 @@ public class Tracker {
          for (int i = 0; i < size; i++) {
              if (items[i].getId() == id) {
                  res = i;
-                 break;
-             } else {
-                 System.out.println("Can not find this id");
                  break;
              }
          }

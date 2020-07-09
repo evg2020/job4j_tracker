@@ -29,5 +29,16 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
+
+    @Test
+    public void whenFindByName() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item();
+        bug.setName("Bug");
+        tracker.add(bug);
+        String name = bug.getName();
+        tracker.findByName("Bug");
+        assertThat(tracker.findByName("Bug")[0].getName(), is("Bug"));
+    }
 }
 
