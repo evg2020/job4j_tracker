@@ -10,16 +10,13 @@ public class Matches {
         while (remaider > 3) {
 
             System.out.println("Введите количество спичек 1, 2 или 3");
-            if (n % 2 == 0) {
-                System.out.println("Игрок 1");
-            } else {
-                System.out.println("Игрок 2");
-            }
+            System.out.println("Игрок " + (n % 2 + 1));
+
             int select = Integer.valueOf(input.nextLine());
             if (select <= 3 && select > 0) {
                 remaider = remaider - select;
                 System.out.println("Остаток " + remaider);
-                ++n;
+                n++;
             } else {
                 System.out.println("количество спичек допустимое 1 или 2 или 3");
             }
