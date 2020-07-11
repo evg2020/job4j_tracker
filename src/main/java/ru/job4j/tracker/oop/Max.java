@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.tracker.oop;
 // 3. Перегрузить метод max для трех чисел [#299294]
 
 public class Max {

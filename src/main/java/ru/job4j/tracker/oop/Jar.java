@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.tracker.oop;
 
 public class Jar {
 
@@ -7,6 +7,7 @@ public class Jar {
     public Jar(int size) {
         this.volume = size;
     }
+
     public void pour(Jar anather) {
         this.volume = this.volume + anather.volume;
         anather.volume = 0;

@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.tracker.oop;
 
 //2.1. Рефакторинг - Расстояние между точками. [#299291]
 

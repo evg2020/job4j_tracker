@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.tracker.oop;
 // 2.2. Рефакторинг - Площадь треугольника. [#299292]
 public class Triangle {
     private Point first;

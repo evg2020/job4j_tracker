@@ -1,4 +1,4 @@
-package ru.job4j.oop.ru.job4j.oop.proff;
+package ru.job4j.tracker.oop.ru.job4j.oop.proff;
 
 public class Doctor extends Profession {
 

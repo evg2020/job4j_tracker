@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.tracker.oop;
 /**
  * @parom position--выбор 1,2 или др.
  * @return println -печатает фразы в зав.от 1, 2 и др
