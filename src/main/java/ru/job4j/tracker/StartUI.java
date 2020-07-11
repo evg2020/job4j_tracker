@@ -32,43 +32,36 @@ public class StartUI {
 
             } else if (select == 2) {
                 System.out.println("===Edit items===");
-                System.out.print("Enter Id: ");
                 int id = Integer.valueOf(input.askStr("Enter Id: "));
                 Item idFind = tracker.findById(id);
-                    if (idFind != null) {
-                        String name = input.askStr("Enter name: ");
-                        Item item = new Item();
-                        item.setName(name);
-                        boolean replace = tracker.replace(id, item);
-                            if (replace) {
-                                System.out.println("Item for " + name + " had been changed");
-                            } else {
-                                System.out.println("Item NOT changed");
-                            }
-
-                    } else {
-                        System.out.println("Can not find id");
-                    }
+                if (idFind != null) {
+                    String name = input.askStr("Enter name: ");
+                    Item item = new Item();
+                    item.setName(name);
+                    boolean replace = tracker.replace(id, item);
+                } else {
+                    System.out.println("Can not find id");
+                }
 
             } else if (select == 3) {
                 System.out.println("===Delete item===");
                 int id = Integer.valueOf(input.askInt("Enter Id: "));
                 boolean del = tracker.delete(id);
-                    if (del) {
+                if (del) {
                     System.out.println("Id " + id + " was deleted :" + del);
-                    } else {
+                } else {
                     System.out.println("Can not find id");
-                    }
+                }
 
             } else if (select == 4) {
                 System.out.println("===Find item by Id===");
                 int id = Integer.valueOf(input.askInt("Enter Id: "));
                 Item idFind = tracker.findById(id);
-                    if (idFind != null) {
+                if (idFind != null) {
                     System.out.println(idFind);
-                    } else {
+                } else {
                     System.out.println("Can not find id");
-                    }
+                }
 
             } else if (select == 5) {
                 System.out.println("===Find items by name===");
@@ -76,7 +69,7 @@ public class StartUI {
                 Item[] namesEqual = tracker.findByName(name);
                 if (namesEqual.length != 0) {
                     for (int i = 0; i < namesEqual.length; i++) {
-                        System.out.println("Name: " + namesEqual[i]);
+                        System.out.println(namesEqual[i]);
                     }
                 } else {
                     System.out.println("No name in items");
@@ -89,22 +82,22 @@ public class StartUI {
         }
     }
 
-        private void showMenu() {
-                System.out.println("== Menu==");
-                System.out.println("0. Add new Item");
-                System.out.println("1. Show all items");
-                System.out.println("2. Edit item");
-                System.out.println("3. Delete item");
-                System.out.println("4. Find item by Id");
-                System.out.println("5. Find items by name");
-                System.out.println("6. Exit Program");
-                System.out.println("Select:");
-        }
-
-        public static void main(String[] args) {
-            Input input =  new ConsoleInput();
-            Tracker tracker = new Tracker();
-            new StartUI().init(input, tracker);
-        }
+    private void showMenu() {
+        System.out.println("== Menu==");
+        System.out.println("0. Add new Item");
+        System.out.println("1. Show all items");
+        System.out.println("2. Edit item");
+        System.out.println("3. Delete item");
+        System.out.println("4. Find item by Id");
+        System.out.println("5. Find items by name");
+        System.out.println("6. Exit Program");
+        System.out.println("Select:");
     }
+
+    public static void main(String[] args) {
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
+        new StartUI().init(input, tracker);
+    }
+}
 
