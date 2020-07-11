@@ -22,10 +22,12 @@ public class StartUI {
 
             } else if (select == 1) {
                 System.out.println("===All items===");
+                Item[] all = tracker.findAll();
                 for (int i = 0; i < tracker.findAll().length; i++) {
-                    String name = tracker.findAll()[i].getName();
-                    int id = tracker.findAll()[i].getId();
-                    System.out.println("Name: " + name + "...id:" + id);
+                    System.out.println(all[i]);
+                    //String name = tracker.findAll()[i].getName();
+                    //int id = tracker.findAll()[i].getId();
+                    //System.out.println("Name: " + name + "...id:" + id);
                 }
 
             } else if (select == 2) {
@@ -66,7 +68,7 @@ public class StartUI {
                 int id = Integer.valueOf(scanner.nextLine());
                 Item idFind = tracker.findById(id);
                     if (idFind != null) {
-                    System.out.println(idFind.getName());
+                    System.out.println(idFind);
                     } else {
                     System.out.println("Can not find id");
                     }
@@ -78,7 +80,7 @@ public class StartUI {
                 Item[] namesEqual = tracker.findByName(name);
                 if (namesEqual.length != 0) {
                     for (int i = 0; i < namesEqual.length; i++) {
-                        System.out.println("Name: " + namesEqual[i].getName());
+                        System.out.println("Name: " + namesEqual[i]);
                     }
                 } else {
                     System.out.println("No name in items");
