@@ -25,7 +25,8 @@ public class StartUI {
         Item item = new Item();
         String name = input.askStr("Enter name: ");
         item.setName(name);
-        if (tracker.replace(id, item)) {
+        boolean replaceName = tracker.replace(id, item);
+        if (replaceName) {
             System.out.println("Item had been replaced");
         } else {
             System.out.println("Can not find id");
