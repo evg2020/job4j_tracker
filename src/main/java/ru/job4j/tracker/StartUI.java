@@ -14,7 +14,7 @@ public class StartUI {
     public static void allItem(Input input, Tracker tracker) {
         System.out.println("===All items===");
         Item[] all = tracker.findAll();
-        for (int i = 0; i < tracker.findAll().length; i++) {
+        for (int i = 0; i < all.length; i++) {
             System.out.println(all[i]);
         }
     }
@@ -23,11 +23,11 @@ public class StartUI {
         System.out.println("===Edit items===");
         int id = Integer.valueOf(input.askStr("Enter Id: "));
         Item idFind = tracker.findById(id);
-        if (idFind != null) {
-            String name = input.askStr("Enter name: ");
-            Item item = new Item();
-            item.setName(name);
-            boolean replace = tracker.replace(id, item);
+        Item item = new Item();
+        String name = input.askStr("Enter name: ");
+        item.setName(name);
+        if (tracker.replace(id, item)) {
+            System.out.println("Item had been replaced");
         } else {
             System.out.println("Can not find id");
         }
