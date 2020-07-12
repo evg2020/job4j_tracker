@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 import java.util.Arrays;
-public class OldVerStart {
+public class OldVerStartUI {
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
