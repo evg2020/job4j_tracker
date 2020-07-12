@@ -22,7 +22,6 @@ public class StartUI {
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("===Edit items===");
         int id = Integer.valueOf(input.askStr("Enter Id: "));
-        Item idFind = tracker.findById(id);
         Item item = new Item();
         String name = input.askStr("Enter name: ");
         item.setName(name);
@@ -110,7 +109,6 @@ public class StartUI {
             }
         }
     }
-
 
     public static void main(String[] args) {
         Input input = new ConsoleInput();
