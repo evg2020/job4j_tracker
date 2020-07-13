@@ -10,22 +10,22 @@ public class TrackerTest {
     public void whenReplace() {
         Tracker tracker = new Tracker();
         Item bug = new Item();
-        bug.setName("Bug");
+        bug.setName("New Item");
         tracker.add(bug);
         int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
-        tracker.replace(id, bugWithDesc);
-        assertThat(tracker.findById(id).getName(), is("Bug with description"));
+        Item replaced = new Item();
+        replaced.setName("replaced item");
+        tracker.replace(id, replaced);
+        assertThat(tracker.findById(id).getName(), is("replaced item"));
     }
 
     @Test
     public void whenDelete() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
-        tracker.add(bug);
-        int id = bug.getId();
+        Item item = new Item();
+        item.setName("new Item");
+        tracker.add(item);
+        int id = item.getId();
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
@@ -33,10 +33,10 @@ public class TrackerTest {
     @Test
     public void whenFindByName() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
-        tracker.add(bug);
-        String name = bug.getName();
+        Item item = new Item();
+        item.setName("Bug");
+        tracker.add(item);
+        String name = item.getName();
         tracker.findByName("Bug");
         assertThat(tracker.findByName("Bug")[0].getName(), is("Bug"));
     }

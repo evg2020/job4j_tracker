@@ -94,6 +94,8 @@ public class OldVerStartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
+        /*StartUI startUI = new StartUI();
+        startUI.init(input, tracker);*/
     }
 }
 
