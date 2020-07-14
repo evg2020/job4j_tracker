@@ -67,8 +67,6 @@ public class StartVer03 {
     }
 
 
-
-
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -98,6 +96,7 @@ public class StartVer03 {
             }
         }
     }
+
     private void showMenu() {
         System.out.println("== Menu==");
         System.out.println("0. Add new Item");
@@ -109,6 +108,7 @@ public class StartVer03 {
         System.out.println("6. Exit Program");
         System.out.println("Select:");
     }
+
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
