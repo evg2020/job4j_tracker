@@ -4,7 +4,12 @@ public class Item {
     public int id;
     public String name;
 
+    public Item() {
+            }
 
+    public Item(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;

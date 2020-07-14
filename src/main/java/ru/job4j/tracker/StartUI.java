@@ -4,17 +4,18 @@ import java.util.Arrays;
 import java.util.stream.StreamSupport;
 
 public class StartUI {
-    public void init(Input input, Tracker tracker, UserAction[] actions) {
+    public void init(Input input, Tracker tracker, UserAction[] actionsTab) {
         boolean run = true;
         while (run) {
-            this.showMenu(actions);
+            this.showMenu(actionsTab);
             int select = input.askInt("Select: ");
-            if (select >= actions.length || select < 0) {
-                System.out.println("Please select point: 0 .. " + (actions.length - 1));
-                continue;
+            if (select >= actionsTab.length || select < 0) {
+                System.out.println("Please, select item: 0 .. " + (actionsTab.length - 1));
+//                continue;
+            } else {
+                UserAction action = actionsTab[select];
+                run = action.execute(input, tracker);
             }
-            UserAction action = actions[select];
-            run = action.execute(input, tracker);
         }
     }
 
@@ -24,10 +25,11 @@ public class StartUI {
             System.out.println(index + ". " + actions[index].name());
         }
     }
+
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
+        UserAction[] actionsTab = {
                 new CreateItem(),
                 new AllItem(),
                 new EditItem(),
@@ -36,7 +38,7 @@ public class StartUI {
                 new FindItemsByName(),
                 new ExitProgram()
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI().init(input, tracker, actionsTab);
     }
 }
 

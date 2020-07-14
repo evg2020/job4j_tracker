@@ -9,8 +9,8 @@ public class EditItem implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("===Edit items===");
-        int id = Integer.valueOf(input.askStr("Enter Id: "));
         Item item = new Item();
+        int id = Integer.valueOf(input.askStr("Enter Id: "));
         String name = input.askStr("Enter name: ");
         item.setName(name);
         boolean replaceName = tracker.replace(id, item);

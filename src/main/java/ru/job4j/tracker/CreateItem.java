@@ -9,6 +9,7 @@ public class CreateItem implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        System.out.println("===Add new Item===");
         String name = input.askStr("Enter name: ");
         Item item = new Item();
         item.setName(name);

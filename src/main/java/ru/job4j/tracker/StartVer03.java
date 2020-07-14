@@ -4,7 +4,7 @@ public class StartVer03 {
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
-        Item item = new Item();
+        Item item = new Item(name);
         item.setName(name);
         tracker.add(item);
     }
@@ -72,7 +72,7 @@ public class StartVer03 {
         while (run) {
             System.out.println();
             this.showMenu();
-            int select = Integer.valueOf(input.askStr("Input items")); // ввести пункт меню
+            int select = Integer.valueOf(input.askStr("Select items")); // ввести пункт меню
             if (select == 0) {
                 StartVer03.createItem(input, tracker);
 
@@ -93,6 +93,9 @@ public class StartVer03 {
 
             } else if (select == 6) {
                 run = false;
+            } else {
+                System.out.println("Please select items : 0...6");
+
             }
         }
     }
