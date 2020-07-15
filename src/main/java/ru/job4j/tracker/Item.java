@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.Objects;
+
 public class Item {
     public int id;
     public String name;
@@ -31,4 +33,7 @@ public class Item {
     public String toString() {
         return "Item{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
+
+
+
 }
