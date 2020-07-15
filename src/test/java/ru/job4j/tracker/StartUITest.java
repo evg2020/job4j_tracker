@@ -101,7 +101,7 @@ public class StartUITest {
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new ExitProgram()
+                new ExitProgram(out)
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
