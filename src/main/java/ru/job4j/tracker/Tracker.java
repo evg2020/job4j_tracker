@@ -19,19 +19,19 @@ public class Tracker {
 
     public Item[] findByName(String name) {
         Item[] sameName = new Item[size];
-        int sizeFix = 0;
+        int sizeNew = 0;
         for (int i = 0; i < size; i++) {
             Item item = items[i];
             if (item.getName().equals(name)) {
-                sameName[sizeFix] = item;
-                sizeFix++;
+                sameName[sizeNew] = item;
+                sizeNew++;
             }
         }
-        return Arrays.copyOf(sameName, sizeFix);
+        return Arrays.copyOf(sameName, sizeNew); // возврат нового масива с уменьшенной длинной
     }
 
     public Item[] findAll() {
-        return Arrays.copyOf(items, size);
+        return Arrays.copyOf(items, size); // возврат нового масива с уменьшенной длинной
     }
 
      private  int indexOf(int id) {

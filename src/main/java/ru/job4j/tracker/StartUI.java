@@ -16,7 +16,7 @@ public class StartUI {
             this.showMenu(actionsTab);
             int select = input.askInt("Select: ");
             if (select >= actionsTab.length || select < 0) {
-                System.out.println("Please, select item: 0 .. " + (actionsTab.length - 1));
+             out.println("Please, select item: 0 .. " + (actionsTab.length - 1));
 //                continue;
             } else {
                 UserAction action = actionsTab[select];
@@ -26,9 +26,9 @@ public class StartUI {
     }
 
     private void showMenu(UserAction[] actions) {
-        System.out.println("Menu.");
+     out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+            out.println(index + ". " + actions[index].name());
         }
     }
 
@@ -43,7 +43,7 @@ public class StartUI {
                 new DeleteItem(),
                 new FindItemsById(),
                 new FindItemsByName(),
-                new ExitProgram(output)
+                new ExitProgram()
         };
         new StartUI(output).init(input, tracker, actionsTab);
     }
