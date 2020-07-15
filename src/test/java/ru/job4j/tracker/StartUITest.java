@@ -85,4 +85,28 @@ public class StartUITest {
             new StartUI().init(in, tracker, actions);
             assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
+
+
+  /*  Сценарий теста.
+
+            1. Трекер загружается с одним действием - "выйти".
+            2. На консоль выводится пункт "Выйти".
+            3. В тесте проверяем, что StubInput содержит вывод меню.*/
+
+    @Test
+    public void whenExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitProgram()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                "Menu." + System.lineSeparator() +
+                        "0. Exit" + System.lineSeparator()
+        ));
+    }
 }

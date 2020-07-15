@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.stream.StreamSupport;
 
 public class StartUI {
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
+
     public void init(Input input, Tracker tracker, UserAction[] actionsTab) {
         boolean run = true;
         while (run) {
