@@ -33,10 +33,11 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actionsTab = {
-                new CreateItem(),
+                new CreateItem(output),
                 new AllItem(),
                 new EditItem(),
                 new DeleteItem(),
@@ -44,7 +45,7 @@ public class StartUI {
                 new FindItemsByName(),
                 new ExitProgram()
         };
-        new StartUI().init(input, tracker, actionsTab);
+        new StartUI(output).init(input, tracker, actionsTab);
     }
 }
 
