@@ -27,28 +27,45 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
 
-                    Tracker tracker = new Tracker();
-             /* Добавим в tracker новую заявку */
+        Tracker tracker = new Tracker();
+            Input in = new StubInput(
+                    new String[] {"0", "Replaced item", "1", "1", "New item name", "2"}
+            );
+            UserAction[] actions = {
+                     new CreateItem(),
+                     new EditItem(),
+                     new ExitProgram()
+            };
+            new StartUI().init(in, tracker, actions);
+            Item repleced = tracker.findById(1);
+            String expected = "New item name";
+            assertThat(repleced.getName(), is(expected));
+        }
+
+    @Test
+    public void whenReplaceItemSecond() {
+
+        Tracker tracker = new Tracker();
+        /* Добавим в tracker новую заявку */
             /*Item item = new Item();
             item.setName("new Item");
             tracker.add(item)*/
-            Item item = tracker.add(new Item("Replaced item"));
-            item.setId(1);
-            /* Входные данные должны содержать ID добавленной заявки item.getId() */
-            Item replacedName = new Item("New item name");
-            replacedName.setId(1);
+        Item item = tracker.add(new Item("Replaced item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
 //            String replacedName = "New item name";
-            Input in = new StubInput(
-                    new String[] {"0",  "1", "New item name", "1"}
-            );
-            UserAction[] actions = {
-                     new EditItem(),
-                    new ExitProgram()
-            };
-            new StartUI().init(in, tracker, actions);
-            assertThat(tracker.findById(item.getId()), is(replacedName));
-        }
-
+        Input in = new StubInput(
+                new String[] {"0",  "1", "New item name", "1"}
+        );
+        UserAction[] actions = {
+                new EditItem(),
+                new ExitProgram()
+        };
+        new StartUI().init(in, tracker, actions);
+        Item repleced = tracker.findById(item.getId());
+        String actial = repleced.getName();
+        String expected = "New item name";
+        assertThat(actial, is(expected));
+    }
     @Test
     public void whenDeleteItem() {
             Tracker tracker = new Tracker();
