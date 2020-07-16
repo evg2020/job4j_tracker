@@ -4,8 +4,9 @@ public class DeleteItem implements UserAction {
 
     private final Output out;
 
-    public  CreateItem(Output out) {
+    public  DeleteItem(Output out) {
         this.out = out;
+
     }
 
     @Override

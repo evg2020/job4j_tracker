@@ -40,7 +40,7 @@ public class StartUI {
                 new CreateItem(output),
                 new AllItem(),
                 new EditItem(),
-                new DeleteItem(),
+                new DeleteItem(output),
                 new FindItemsById(),
                 new FindItemsByName(),
                 new ExitProgram()
