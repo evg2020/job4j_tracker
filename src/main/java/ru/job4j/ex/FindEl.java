@@ -34,7 +34,8 @@ public class FindEl {
             int res = indexOf(val, key);
             System.out.println(res);
             } catch  (ElementNotFoundExeption e) {
-                e.printStackTrace();
+//                e.printStackTrace();
+                System.out.println(e);
                 }
         }
     }
