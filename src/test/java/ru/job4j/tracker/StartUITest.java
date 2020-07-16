@@ -116,16 +116,22 @@ public class StartUITest {
                 3. В тесте проверяем, что StubInput содержит вывод меню.*/
     @Test
     public void whenAllItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item();
+        item.setName("New Name");
+        tracker.add(item);
+
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0"}
         );
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
+                UserAction[] actions = {
                 new AllItem(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("AllItem"));
+        assertThat(out.toString(), is(
+                "===All item===" + System.lineSeparator() +
+                "Item{id=1, name='New Name'}" + System.lineSeparator()));
 
     }
 
@@ -147,13 +153,15 @@ public class StartUITest {
 
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"5", "New Name"}
+                new String[] {"0", "New Name"}
         );
         UserAction[] actions = {
                 new FindItemsByName(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("New Name"));
+        assertThat(out.toString(), is(
+                "===All item===" + System.lineSeparator() +
+                        "Item{id=1, name='New Name'}" + System.lineSeparator()));
 
     }
 }
