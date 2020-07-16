@@ -123,10 +123,10 @@ public class StartUITest {
 
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"}
+                new String[] {"0", "1"}
         );
                 UserAction[] actions = {
-                new AllItem(out)
+                new AllItem(out), new ExitProgram()
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
@@ -153,10 +153,10 @@ public class StartUITest {
 
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "New Name"}
+                new String[] {"0", "New Name", "2"}
         );
         UserAction[] actions = {
-                new FindItemsByName(out)
+                new FindItemsByName(out), new ExitProgram()
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
