@@ -94,7 +94,7 @@ public class StartUITest {
             3. В тесте проверяем, что StubInput содержит вывод меню.*/
 
     @Test
-    public void whenExit() {
+    public void whenExitProgram() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"0"}
@@ -109,4 +109,52 @@ public class StartUITest {
                         "0. Exit Program " + System.lineSeparator()
         ));
     }
+    /*  Сценарий теста.
+
+                1. Трекер загружается с одним действием - "AllItem".
+                2. На консоль выводится пункт "AllItem".
+                3. В тесте проверяем, что StubInput содержит вывод меню.*/
+    @Test
+    public void whenAllItem() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new AllItem(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is("AllItem"));
+
+    }
+
+    @Test
+    public void whenFindByName() {
+
+        /*Input in = new StubInput(
+                new String[] {"0", "Replaced item", "1", "1", "New item name", "2"}
+        );
+        UserAction[] actions = {
+                new CreateItem("New item name"),
+                new EditItem(),
+                new ExitProgram()
+        };*/
+        Tracker tracker = new Tracker();
+        Item item = new Item();
+        item.setName("New Name");
+        tracker.add(item);
+
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"5", "New Name"}
+        );
+        UserAction[] actions = {
+                new FindItemsByName(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is("New Name"));
+
+    }
 }
+
