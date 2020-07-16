@@ -27,7 +27,7 @@ public class FindEl {
         return res;
     }
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
             try {
             String[] val = {"q", "l", "h", "d"};
             String key = "0";
@@ -35,7 +35,7 @@ public class FindEl {
             System.out.println(res);
             } catch  (ElementNotFoundExeption e) {
                 e.printStackTrace();
-//                System.out.println(e);
+                System.out.println(e);
                 }
         }
     }
