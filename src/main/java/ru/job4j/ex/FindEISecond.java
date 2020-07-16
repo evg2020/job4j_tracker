@@ -18,7 +18,7 @@ public class FindEISecond {
         ElementNotFoundExeption elem =new ElementNotFoundExeption("There are not any equal char");
         try {
             String[] val = {"q", "l", "h", "d"};
-            String key = "0";
+            String key = "x";
             int res = indexOf(val, key);
             System.out.println(res);
         } catch  (ElementNotFoundExeption) {
