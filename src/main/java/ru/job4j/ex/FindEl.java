@@ -27,15 +27,15 @@ public class FindEl {
         return res;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
             try {
             String[] val = {"q", "l", "h", "d"};
             String key = "0";
             int res = indexOf(val, key);
             System.out.println(res);
             } catch  (ElementNotFoundExeption e) {
-//                e.printStackTrace();
-                System.out.println(e);
+                e.printStackTrace();
+//                System.out.println(e);
                 }
         }
     }

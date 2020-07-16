@@ -1,6 +1,6 @@
 package ru.job4j.ex;
 
-public class FindEISecond {
+public class FindEITherd {
     public  static int indexOf(String[] value, String key) throws ElementNotFoundExeption {
 
         int res = -1;
@@ -16,12 +16,16 @@ public class FindEISecond {
         return res;
     }
 
-    public static void main(String[] args)  throws ElementNotFoundExeption{
-
+    public static void main(String[] args) {
+        try {
             String[] val = {"q", "l", "h", "d"};
-            String key = "g";
+            String key = "0";
             int res = indexOf(val, key);
             System.out.println(res);
-
+        } catch  (ElementNotFoundExeption e) {
+                e.printStackTrace();
+//            System.out.println(e);
+        }
     }
 }
+
