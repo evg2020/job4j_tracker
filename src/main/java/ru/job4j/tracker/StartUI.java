@@ -15,15 +15,15 @@ public class StartUI {
         while (run) {
             this.showMenu(actionsTab);
             int select = input.askInt("Select: ");
-            if (select >= actionsTab.length || select < 0) {
-             out.println("Please, select item: 0 .. " + (actionsTab.length - 1));
-//                continue;
-            } else {
-                UserAction action = actionsTab[select];
+             if (select < 0 || select >= actionsTab.length) {
+                 out.println("Wrong input, please select 0.. " + (actionsTab.length-1));
+                 continue;
+             }
+               UserAction action = actionsTab[select];
                 run = action.execute(input, tracker);
             }
         }
-    }
+
 
     private void showMenu(UserAction[] actions) {
      out.println("Menu.");
@@ -34,7 +34,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
         Tracker tracker = new Tracker();
         UserAction[] actionsTab = {
                 new CreateItem(output),
