@@ -34,6 +34,7 @@ public class Tracker {
         return Arrays.copyOf(items, size); // возврат нового масива с уменьшенной длинной
     }
 
+// возвращает индек ячейки массива items при совпадени номера id
      private  int indexOf(int id) {
         int res = -1;
          for (int i = 0; i < size; i++) {
@@ -44,12 +45,12 @@ public class Tracker {
          }
          return res;
      }
-
+// возвращает значение ячейки при совпадение id
      public Item findById(int id) {
         int index = indexOf(id);
         return (index != -1) ? items[index] : null;
      }
-
+// заменяет
      public boolean replace(int id, Item item) {
         boolean res = false;
         int index = indexOf(id);

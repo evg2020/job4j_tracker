@@ -74,7 +74,7 @@ public class StartVer03 {
             this.showMenu();
             int select = Integer.valueOf(input.askStr("Select items")); // ввести пункт меню
             if (select == 0) {
-                StartVer03.createItem(input, tracker);
+                createItem(input, tracker);
 
             } else if (select == 1) {
                 StartVer03.allItem(input, tracker);
