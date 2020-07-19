@@ -28,20 +28,12 @@ public class ValidateInputTest {
     public void whenvalidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"one"}
+                new String[] {"one", "0"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(out.toString(), is("Please enter validate data again"));
+        assertThat(out.toString(), is("Please enter validate data again.\r\n"));
     }
 
-    @Test
-    public void whenOutPut() {
-        Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"1"}
-        );
-        assertThat(out.toString(), is(1));
-    }
 
 }
