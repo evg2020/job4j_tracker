@@ -113,9 +113,9 @@ public class StartVer03 {
     }
 
     public static void main(String[] args) {
-        Input input = new ConsoleInput();
+        Input inputs = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartVer03().init(input, tracker);
+        new StartVer03().init(inputs, tracker);
     }
 }
 
