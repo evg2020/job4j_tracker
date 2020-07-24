@@ -9,7 +9,7 @@ public class Find {
     }
     public static void main(String[] args) {
         String[] data = {"onw", "two", "three"};
-        String rsl = Find.get(data, 3);
+        String rsl = Find.get(data, 4);
         System.out.println(rsl);
     }
 }
