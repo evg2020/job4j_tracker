@@ -6,8 +6,7 @@ public class Person {
     private String phone;
     private String address;
 
-    public Person
-            (String name, String surname, String phone, String address) {
+    public Person(String name, String surname, String phone, String address) {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
@@ -28,6 +27,20 @@ public class Person {
 
     public String getAddress() {
         return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
 

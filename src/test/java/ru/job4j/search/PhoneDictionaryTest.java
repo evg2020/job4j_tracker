@@ -8,13 +8,13 @@ import static org.junit.Assert.*;
 public class PhoneDictionaryTest {
 
     @Test
-    public void whenFindByName() {
+    public void whenFindByKey() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
                 new Person("Ivan", "Ivanov", "1234", "Moscow")
         );
         ArrayList<Person> persons = phones.find("cow");
-        assertThat(persons.get(0).getName(), is("Ivan"));
+        assertThat(persons.get(0).getAddress(), is("Moscow"));
 
     }
 }
