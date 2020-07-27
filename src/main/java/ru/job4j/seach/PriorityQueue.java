@@ -17,7 +17,6 @@ public class PriorityQueue {
                 if (element.getPriority() < task.getPriority()) {
                     index += 1;
                 }
-
             }
         this.tasks.add(index, task);
      }
