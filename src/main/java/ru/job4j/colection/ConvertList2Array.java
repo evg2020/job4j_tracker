@@ -10,19 +10,19 @@ public class ConvertList2Array {
         int[][] array = new int[groups][cells];
         int row = 0, cell = 0;
         for (Integer num : list) {
+                      if (cell < cells) {
+                      array[row][cell] = num;
+                          cell++;
 
-            if (cell < cells) {
-                array[row][cell] = num;
-                cell += 1;
-
-                if (row < groups) {
-                    array[row][cell] = num;
-                    row += 1;
+                  } else if (row < groups) {
+                          row++;
+                          cell = 0;
+                    }
                 }
-            }
-        }
         return array;
-    }
+        }
+
+
 
     public static void main(String[] args) {
         List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
@@ -33,5 +33,5 @@ public class ConvertList2Array {
             }
             System.out.println();
         }
-            }
+    }
 }
