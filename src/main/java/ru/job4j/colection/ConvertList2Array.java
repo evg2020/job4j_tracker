@@ -1,5 +1,7 @@
 package ru.job4j.colection;
 import java.util.List;
+import java.util.ArrayList;
+
 public class ConvertList2Array {
     public static int[][] toArray(List<Integer> list, int cells) {
         int groups = (int) Math.ceil((double) list.size() / cells);
@@ -7,7 +9,7 @@ public class ConvertList2Array {
         for (int num : list) {
             for (int[] row : array) {
                 for (int cell : row) {
-                    array[row][cell] = num;
+                    array[2][cell] = num;
                 }
             }
         }

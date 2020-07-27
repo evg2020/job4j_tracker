@@ -9,11 +9,9 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 
-/*
 public class PriorityQueueTest {
 
-    */
-/*@Test
+@Test
     public void whenHighPriority() {
         PriorityQueue queqe = new PriorityQueue();
         queqe.put(new Task("low", 5));
@@ -22,8 +20,7 @@ public class PriorityQueueTest {
         Task res = queqe.take();
         assertThat(res.getDesc(), is("urgent"));
         }
-    }*//*
+    }
 
 
 
-*/
