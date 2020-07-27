@@ -5,11 +5,19 @@ import java.util.ArrayList;
 public class ConvertList2Array {
     public static int[][] toArray(List<Integer> list, int cells) {
         int groups = (int) Math.ceil((double) list.size() / cells);
+
+        System.out.println(groups);
         int[][] array = new int[groups][cells];
-        for (int num : list) {
-            for (int[] row : array) {
-                for (int cell : row) {
-                    array[2][cell] = num;
+        int row = 0, cell = 0;
+        for (Integer num : list) {
+
+            if (cell < cells) {
+                array[row][cell] = num;
+                cell += 1;
+
+                if (row < groups) {
+                    array[row][cell] = num;
+                    row += 1;
                 }
             }
         }
@@ -25,5 +33,5 @@ public class ConvertList2Array {
             }
             System.out.println();
         }
-    }
+            }
 }
