@@ -10,14 +10,12 @@ public class ConvertList2Array {
         int[][] array = new int[groups][cells];
         int row = 0, cell = 0;
         for (Integer num : list) {
-                      if (cell < cells) {
+                      if (cell == cells) {
+                      row++;
+                      cell = 0;
+                  }
                       array[row][cell] = num;
-                          cell++;
-
-                  } else if (row < groups) {
-                          row++;
-                          cell = 0;
-                    }
+                      cell++;
                 }
         return array;
         }
@@ -25,7 +23,7 @@ public class ConvertList2Array {
 
 
     public static void main(String[] args) {
-        List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+        List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7);
         int[][] rsl = toArray(list, 3);
         for (int[] row : rsl) {
             for (int cell : row) {
