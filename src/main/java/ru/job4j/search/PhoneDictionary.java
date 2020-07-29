@@ -33,9 +33,9 @@ public class PhoneDictionary {
         }
         return result;
     }
-}
 
-   /* public static void main(String[] args) {
+    @SuppressWarnings("checkstyle:EmptyLineSeparator")
+    public static void main(String[] args) {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
                 new Person("Ivan", "Ivanov", "1234", "Moscow")
@@ -46,7 +46,12 @@ public class PhoneDictionary {
         for (Person person : phones.getPersons()) {
             System.out.println(person.toString());
         }
-//        System.out.println(phones.getPersons().get(0).toString()); находи в phone поле  person с типом ArrayList<Person>, выбираем элемент 0 и из него выводим все поля на консоль
-    }*/
+        System.out.println(phones.getPersons().get(0).toString());
+//        находи в phone поле person с типом ArrayList<Person >, выбираем элемент 0 и из него выводим все поля на консоль
+//        ArrayList<Person> persons = phones.find("cow");
+
+    }
+}
+
 
 

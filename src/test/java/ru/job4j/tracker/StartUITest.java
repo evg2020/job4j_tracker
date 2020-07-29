@@ -93,11 +93,11 @@ public class StartUITest {
             2. На консоль выводится пункт "Выйти".
             3. В тесте проверяем, что StubInput содержит вывод меню.*/
 
-    @Test
+   /* @Test
     public void whenExitProgram() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"}
+                new String {"0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
@@ -108,7 +108,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Exit Program " + System.lineSeparator()
         ));
-    }
+    }*/
     /*  Сценарий теста.
 
                 1. Трекер загружается с одним действием - "AllItem".
@@ -165,7 +165,7 @@ public class StartUITest {
 
     }*/
 
-    @Test
+   /* @Test
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -185,7 +185,7 @@ public class StartUITest {
                                 + "0. Exit Program\r\n"
                 )
         ));
-    }
+    }*/
 
 
 }
