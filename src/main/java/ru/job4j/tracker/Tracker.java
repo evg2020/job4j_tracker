@@ -5,27 +5,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tracker {
-    ArrayList<Item> items = new ArrayList<>();
+    List<Item> items = new ArrayList<>();
 //    private final Item[] items = new Item[100];
     private int ids = 1;
-    private int size = 0;
 
-    public ArrayList<Item> getItems() {
+
+    public List<Item> getItems() {
         return items;
     }
 
     public Item add(Item item) {
         item.setId(ids++);
-        items.add(size++, item);
-//        items[size++] = item;
         return item;
     }
 
-    public ArrayList findByName(String name) {
-        ArrayList<Item> sameName = new ArrayList<>();
-        int sizeNew = 0;
+    public List findByName(String name) {
+        List<Item> sameName = new ArrayList<>();
         for (Item same : items) {
-            if (same.getName().contains(name)) {
+            if (same.getName().equals(name)) {
                 sameName.add(same);
             }
         }
@@ -33,7 +30,7 @@ public class Tracker {
     }
 
     // возврат Списка
-    public ArrayList<Item> findAll() {
+    public List<Item> findAll() {
         return  items;
     }
 
@@ -41,9 +38,11 @@ public class Tracker {
      private  int indexOf(int id) {
           int res = -1;
          for (Item same : items) {
+             res++;
              if (same.getId() == id) {
-                 res = items.indexOf(same);
-                 break;
+                  break;
+             } else {
+                 res = -1;
              }
          }
          return res;
@@ -70,7 +69,8 @@ public class Tracker {
      public  boolean  delete(int id) {
          boolean res = false;
          int index = indexOf(id);
-           if (items.remove(index) != null) {
+           if (index != -1) {
+               items.remove(index);
                res = true;
            }
 
