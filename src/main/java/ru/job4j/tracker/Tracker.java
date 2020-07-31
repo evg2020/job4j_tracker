@@ -19,8 +19,8 @@ public class Tracker {
         return item;
     }
 
-    public List findByName(String name) {
-        List<Item> sameName = new ArrayList<>();
+    public List<Item> findByName(String name) {
+        ArrayList<Item> sameName = new ArrayList<>();
         for (Item same : items) {
             if (same.getName().equals(name)) {
                 sameName.add(same);
