@@ -37,13 +37,12 @@ public class Tracker {
 // возвращает индекc ячейки массива items при совпадени номера id
      private  int indexOf(int id) {
           int res = -1;
-         for (Item same : items) {
-             res++;
-             if (same.getId() == id) {
-                  break;
-             } else {
-                 res = -1;
+         for (int i = 0; i < items.size(); i++) {
+             if (items.get(i).getId() == id) {
+                 res = i;
+                 break;
              }
+
          }
          return res;
      }
