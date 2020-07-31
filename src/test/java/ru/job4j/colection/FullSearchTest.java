@@ -13,7 +13,7 @@ public class FullSearchTest {
 
     @Test
     public void extractNumber() {
-        List<Task> tasks =Arrays.asList(
+        List<Task> tasks = Arrays.asList(
                 new Task("1", "first"),
                 new Task("2", "second"),
                 new Task("1", "first"));
