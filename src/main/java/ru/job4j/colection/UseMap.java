@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.colection;
 
 import java.sql.SQLOutput;
 import java.util.HashMap;
