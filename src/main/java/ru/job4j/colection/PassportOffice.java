@@ -17,16 +17,8 @@ public class PassportOffice {
     }
 
     public Citizen get(String passport) {
-/*
-        if (citizens.containsKey(passport)) {
-            Citizen citizen = citizens.get(passport);
-            System.out.println(citizen.toString());*/
+
         return citizens.get(passport);
-//
-//        } else {
-//        System.out.println("No passport in the data base");
-//        return null;
-//        }
 
     }
 }

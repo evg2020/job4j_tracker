@@ -6,26 +6,13 @@ public class Order {
     private String number;
     private String name;
 
-    public Order(String number, String name) {
-        this.number = number;
-        this.name = name;
-    }
 
-    public String getNumber() {
+    public Order(String number, String name){
+    this.number = number;
+    this.name = name;
+    }
+    public String getNumber(){
         return number;
-    }
-
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "number='" + number + '\'' +
-                ", name='" + name + '\'' +
-                '}';
     }
 
 
@@ -34,11 +21,12 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return number.equals(order.number);
+        return number.equals(order.number) &&
+                name.equals(order.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number);
+        return Objects.hash(number, name);
     }
 }
