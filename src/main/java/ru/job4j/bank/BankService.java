@@ -39,14 +39,7 @@ public class BankService {
             }
         }
 
-        /*for (int i = 0; i < users.get(passport).size(); i++) {
-            if (users.get(passport).get(i) != account) {
-                users.get(passport).add(account);
-            } else {
-                System.out.println("account is already in the base");
-            }
 
-        }*/
 
     }
 
@@ -66,15 +59,18 @@ public class BankService {
 
 
     public Account findByRequisite(String passport, String requisite) {
+        Account accountUser = null;
         List<Account> userAccounts = users.get(passport);
         for (int i = 0; i < userAccounts.size(); i++) {
             if (userAccounts.get(i).getRequisite() == requisite) {
-                return userAccounts.get(i);
+                accountUser = userAccounts.get(i);
+                break;
+
             } else {
                 System.out.println("No requisite in the base");
             }
         }
-        return null;
+        return accountUser;
     }
 
 

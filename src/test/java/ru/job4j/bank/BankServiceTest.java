@@ -6,6 +6,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class BankServiceTest {
+
     @Test
     public void addUser() {
         User user = new User("3434", "Petr Arsentev");
@@ -13,13 +14,23 @@ public class BankServiceTest {
         bank.addUser(user);
         assertThat(bank.findByPassport("3434"), is(user));
     }
+
     @Test
     public void findByPassport() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertThat(bank.findByPassport("3434").getPassport(), is(3434));
+        assertThat(bank.findByPassport("3434").getPassport(), is("3434"));
+    }
+
+    @Test
+    public void findByRequisite() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new Account("5546", 1500));
+        assertThat(bank.findByRequisite("3434", "5546").getBalance(), is(1500));
     }
 
 
