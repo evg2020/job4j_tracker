@@ -49,7 +49,7 @@ public class BankService {
         User user = findByPassport(passport);
         List<Account> userAccounts = users.get(user);
         for (int i = 0; i < userAccounts.size(); i++) {
-            if (!userAccounts.get(i).getRequisite().equals(requisite)) {
+            if (userAccounts.get(i).getRequisite().equals(requisite)) {
                 accountUser = userAccounts.get(i);
 
             }
