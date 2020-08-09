@@ -51,16 +51,17 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-          for (User user : users.keySet()) {
-            if (user.getPassport() == passport) {
-                return user;
+        User user = null;
+          for (User users : users.keySet()) {
+            if (users.getPassport() == passport) {
+                user = users;
             } else {
                 System.out.println("No Client on the base");
 
             }
 
         }
-        return null;
+        return user;
     }
 
 
@@ -73,6 +74,7 @@ public class BankService {
                 System.out.println("No requisite in the base");
             }
         }
+        return null;
     }
 
 
