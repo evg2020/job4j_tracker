@@ -56,14 +56,13 @@ public class BankService {
             }
         }
         return accountUser;
+
     }
 
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean res = false;
-        User user01 = findByPassport(srcPassport);
-        User user02 = findByPassport(destPassport);
         Account account01 = findByRequisite(srcPassport, srcRequisite);
         Account account02 = findByRequisite(destPassport, destRequisite);
         if (account01.getBalance() >= amount) {
