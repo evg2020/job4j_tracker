@@ -15,12 +15,22 @@ public class BankServiceTest {
         assertThat(bank.findByPassport("3434"), is(user));
     }
 
+
+    @Test
+    public void addAccount() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new Account("5546", 1500));
+        assertThat(bank.findByRequisite("3434", "5546").getBalance(), is(1500));
+    }
+
     @Test
     public void findByPassport() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
-        bank.addAccount(user.getPassport(), new Account("5546", 150D));
+        bank.addAccount(user.getPassport(), new Account("5546", 1500));
         assertThat(bank.findByPassport("3434").getPassport(), is("3434"));
     }
 
@@ -35,14 +45,6 @@ public class BankServiceTest {
 
 
 
-    @Test
-    public void addAccount() {
-        User user = new User("3434", "Petr Arsentev");
-        BankService bank = new BankService();
-        bank.addUser(user);
-        bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertThat(bank.findByRequisite("3434", "5546").getBalance(), is(150D));
-    }
 
     @Test
     public void whenEnterInvalidPassport() {

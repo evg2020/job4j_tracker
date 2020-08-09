@@ -20,38 +20,26 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        if (!users.containsKey(user)) {
-            users.put(user, new ArrayList<Account>());
-        } else {
-            System.out.println("Client is already on the base");
-        }
-    }
-
-    public void addAccount(String passport, Account account) {
-        User user = findByPassport(passport);
-        List accounts = users.get(user);
-        for (int i = 0; i < accounts.size(); i++) {
-            if (accounts.get(i) != account) {
-                accounts.add(account);
-            } else {
-                System.out.println("Account is already base");
-
-            }
-        }
-
-
-
+        users.putIfAbsent(user, new ArrayList<Account>());
     }
 
     public User findByPassport(String passport) {
         User user = null;
-          for (User users : users.keySet()) {
-            if (users.getPassport() == passport) {
-                user = users;
+        for (User user01 : users.keySet()) {
+            if (user01.getPassport().equals(passport)) {
+                user = user01;
             }
-
         }
         return user;
+    }
+
+    public void addAccount(String passport, Account account) {
+        if (findByPassport(passport) != null) {
+            List<Account> accounts = users.get(passport);
+            if (!users.containsValue(accounts)) {
+                accounts.add(account);
+            }
+        }
     }
 
 
@@ -59,9 +47,9 @@ public class BankService {
         Account accountUser = null;
         List<Account> userAccounts = users.get(passport);
         for (int i = 0; i < userAccounts.size(); i++) {
-            if (userAccounts.get(i).getRequisite() == requisite) {
+            if (userAccounts.get(i).getRequisite().equals(requisite)) {
                 accountUser = userAccounts.get(i);
-                break;
+
             }
         }
         return accountUser;
