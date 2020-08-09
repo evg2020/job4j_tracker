@@ -3,6 +3,7 @@ package ru.job4j.bank;
 import ru.job4j.oop.Object;
 
 import javax.management.MBeanRegistration;
+import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +52,7 @@ public class BankService {
         for (int i = 0; i < userAccounts.size(); i++) {
             if (userAccounts.get(i).getRequisite().equals(requisite)) {
                 accountUser = userAccounts.get(i);
-
+                break;
             }
         }
         return accountUser;
@@ -61,6 +62,17 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean res = false;
+        User user01 = findByPassport(srcPassport);
+        User user02 = findByPassport(destPassport);
+        Account account01 = findByRequisite(srcPassport, srcRequisite);
+        Account account02 = findByRequisite(destPassport, destRequisite);
+        if (account01.getBalance() >= amount) {
+            double newBalance = account02.getBalance() + amount;
+            double changedBalance = account01.getBalance() - amount;
+            account02.setBalance(newBalance);
+            account01.setBalance(changedBalance);
+            res = true;
+        }
         return res;
     }
 
