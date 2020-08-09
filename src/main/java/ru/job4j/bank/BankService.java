@@ -35,7 +35,8 @@ public class BankService {
 
     public void addAccount(String passport, Account account) {
         if (findByPassport(passport) != null) {
-            List<Account> accounts = users.get(passport);
+            User user = findByPassport(passport);
+            List<Account> accounts = users.get(user);
             if (!users.containsValue(accounts)) {
                 accounts.add(account);
             }
@@ -45,7 +46,8 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         Account accountUser = null;
-        List<Account> userAccounts = users.get(passport);
+        User user = findByPassport(passport);
+        List<Account> userAccounts = users.get(user);
         for (int i = 0; i < userAccounts.size(); i++) {
             if (userAccounts.get(i).getRequisite().equals(requisite)) {
                 accountUser = userAccounts.get(i);
