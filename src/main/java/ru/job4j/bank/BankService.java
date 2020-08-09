@@ -65,19 +65,16 @@ public class BankService {
 
 
     public Account findByRequisite(String passport, String requisite) {
-         List<Account> userAccounts = users.get(passport);
+        List<Account> userAccounts = users.get(passport);
         for (int i = 0; i < userAccounts.size(); i++) {
             if (userAccounts.get(i).getRequisite() == requisite) {
                 return userAccounts.get(i);
             } else {
                 System.out.println("No requisite in the base");
-
             }
-
         }
-
-        return null;
     }
+
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
