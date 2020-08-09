@@ -48,9 +48,6 @@ public class BankService {
           for (User users : users.keySet()) {
             if (users.getPassport() == passport) {
                 user = users;
-            } else {
-                System.out.println("No Client on the base");
-
             }
 
         }
@@ -65,9 +62,6 @@ public class BankService {
             if (userAccounts.get(i).getRequisite() == requisite) {
                 accountUser = userAccounts.get(i);
                 break;
-
-            } else {
-                System.out.println("No requisite in the base");
             }
         }
         return accountUser;
