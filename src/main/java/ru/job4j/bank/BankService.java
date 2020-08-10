@@ -29,6 +29,7 @@ public class BankService {
         for (User user01 : users.keySet()) {
             if (user01.getPassport().equals(passport)) {
                 user = user01;
+                break;
             }
         }
         return user;
