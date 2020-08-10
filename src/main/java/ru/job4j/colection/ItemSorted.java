@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 
-@SuppressWarnings("checkstyle:WhitespaceAround")
+
 public class ItemSorted {
 
     public List<Item> sort(List<Item> items) {

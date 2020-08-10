@@ -1,8 +1,8 @@
 package ru.job4j.colection;
 
 public class Item implements Comparable<Item> {
-    public int id;
-    public String name;
+    private int id;
+    private String name;
 
 
     public Item(String name) {
