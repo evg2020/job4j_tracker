@@ -1,14 +1,9 @@
-package ru.job4j.tracker;
+package ru.job4j.colection;
 
-import java.util.Objects;
-
-public class Item {
+public class Item implements Comparable<Item> {
     public int id;
     public String name;
 
-
-    public Item() {
-            }
 
     public Item(String name) {
         this.name = name;
@@ -53,5 +48,10 @@ public class Item {
     @Override
     public int hashCode() {
         return 0;
+    }
+
+    @Override
+    public int compareTo(Item another) {
+        return Integer.compare(id, another.id);
     }
 }
