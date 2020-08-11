@@ -40,6 +40,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
+        bank.addAccount(user.getPassport(), new Account("5555", 150D));
         assertThat(bank.findByRequisite("3434", "5546").getBalance(), is(150D));
     }
 
@@ -52,7 +53,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertNull(bank.findByRequisite("34", "5546"));
+        assertNull(bank.findByPassport("34343"));
     }
 
     @Test
