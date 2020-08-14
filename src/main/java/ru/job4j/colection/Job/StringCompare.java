@@ -10,9 +10,8 @@ public class StringCompare implements Comparator<String> {
         int left01 = left.length();
         int right01 = right.length();
         int maxNumber = Math.max(left01, right01);
-        int minNumber = Math.max(left01, right01);
         if (left01 >= right01) {
-            for (int i = 0; i < maxNumber; i++) {
+            for (int i = 0; i < maxNumber - 1; i++) {
                 int comp = Character.compare(left.charAt(i), right.charAt(i));
                 if (comp == 0) {
                     res = 0;
@@ -23,8 +22,8 @@ public class StringCompare implements Comparator<String> {
                     res = -1;
                     break;
                 }
-            }
 
+            }
         }
 
 

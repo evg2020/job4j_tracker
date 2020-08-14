@@ -40,7 +40,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void secondCharOfLeftGreaterThanRightShouldBePositive() {
+    public void secondCharOfLeftGreaterThanRightShouldBePositive(){
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov",
