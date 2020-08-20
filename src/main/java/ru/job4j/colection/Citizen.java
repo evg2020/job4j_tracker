@@ -9,9 +9,11 @@ public class Citizen {
         this.passport =passport;
         this.username = username;
             }
+
     public String getPassport() {
         return passport;
     }
+
     public String getUsername() {
         return username;
     }

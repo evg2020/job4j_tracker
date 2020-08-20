@@ -9,7 +9,6 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-
 public class ValidateInputTest {
 // правидьный  ввод
     @Test
@@ -34,6 +33,4 @@ public class ValidateInputTest {
         int selected = input.askInt("Enter menu:");
         assertThat(out.toString(), is("Please enter validate data again.\r\n"));
     }
-
-
 }

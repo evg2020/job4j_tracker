@@ -45,9 +45,6 @@ public class BankService {
         return user;
     }
 
-
-
-
     public Account findByRequisite(String passport, String requisite) {
         Account accountUser = null;
         User user = findByPassport(passport);
@@ -63,7 +60,6 @@ public class BankService {
         return accountUser;
 
     }
-
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {

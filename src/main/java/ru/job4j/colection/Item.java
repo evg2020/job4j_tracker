@@ -35,7 +35,6 @@ public class Item implements Comparable<Item> {
         return "Item{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

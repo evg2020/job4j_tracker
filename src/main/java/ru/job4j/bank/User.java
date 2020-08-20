@@ -7,8 +7,6 @@ public class User {
     private  String passport;
     private String username;
 
-
-
     public User(String passport, String username) {
         this.passport = passport;
         this.username = username;
@@ -21,6 +19,7 @@ public class User {
     public void setPassport(String passport) {
         this.passport = passport;
     }
+
     public String getUsername() {
         return  username;
     }
