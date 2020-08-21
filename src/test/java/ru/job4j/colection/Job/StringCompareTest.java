@@ -1,12 +1,12 @@
-package ru.job4j.colection.Job;
+package ru.job4j.colection;
 
 import org.junit.Test;
+import ru.job4j.colection.StringCompare;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class StringCompareTest {
     @Test

@@ -1,7 +1,7 @@
 package ru.job4j.colection.Job;
 
 import org.junit.Test;
-import ru.job4j.colection.User;
+import ru.job4j.colection.*;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,11 +9,6 @@ import java.util.Comparator;
 import java.util.List;
 
 
-import java.util.Iterator;
-import java.util.Set;
-import java.util.TreeSet;
-
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -38,7 +33,6 @@ public class JobSorterTest {
         assertThat(result, is(expect));
 
     }
-
 
     @Test
     public void sortByNameDecr() {
@@ -77,7 +71,6 @@ public class JobSorterTest {
 
     @Test
     public void sortByPriorDecr() {
-
 
         List<Job> result = Arrays.asList(
                 new Job("aFix bug", 1),

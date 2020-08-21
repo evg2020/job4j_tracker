@@ -1,6 +1,4 @@
-package ru.job4j.colection.Job;
-
-import ru.job4j.colection.User;
+package ru.job4j.colection;
 
 public class Job implements Comparable<Job> {
     private String name;

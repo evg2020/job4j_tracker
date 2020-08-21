@@ -1,10 +1,8 @@
-package ru.job4j.colection.Job;
+package ru.job4j.colection;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.ArrayList;
 
 public class JobSorter {
 

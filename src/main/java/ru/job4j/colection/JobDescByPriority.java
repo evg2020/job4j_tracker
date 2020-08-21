@@ -1,4 +1,4 @@
-package ru.job4j.colection.Job;
+package ru.job4j.colection;
 import java.util.Comparator;
 
 public class JobDescByPriority implements Comparator<Job> {
