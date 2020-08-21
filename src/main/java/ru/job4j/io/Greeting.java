@@ -8,7 +8,7 @@ public class Greeting {
 
         String name = input.nextLine();
         System.out.println("Hello, " + name);*/
-        System.out.println( (1 % 2));
+        System.out.println(1 % 2);
         }
     }
 

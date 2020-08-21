@@ -5,7 +5,7 @@ public class Fact {
 
         int res;
         if (n < 0) {
-            throw new IllegalArgumentException("Факториал числа — произведение всех натуральных чисел от 1 до этого числа");
+            throw new IllegalArgumentException("Факториал числа ");
         }
         if (n == 0) {
             res = 1;
@@ -18,7 +18,7 @@ public class Fact {
         return  res;
     }
 
-        public static void main (String[]args) {
+        public static void main(String[]args) {
 
             Fact fact = new Fact();
             int n = -2;

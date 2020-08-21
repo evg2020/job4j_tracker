@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.util.Objects;
 
 public class Item {
-    public int id;
+    private int id;
     private String name;
 
     public Item() {

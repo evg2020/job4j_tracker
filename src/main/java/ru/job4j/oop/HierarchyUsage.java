@@ -1,8 +1,8 @@
 package ru.job4j.oop;
 
 public class HierarchyUsage {
-    Car car = new Car();
-    Transport tp = car;
+    private Car car = new Car();
+    private Transport tp = car;
 //    Object obj = car;
 
     /* Приведение типа за счет понижения по иерархии. *//*

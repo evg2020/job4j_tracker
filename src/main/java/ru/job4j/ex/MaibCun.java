@@ -6,12 +6,13 @@ import java.sql.SQLOutput;
 
 public class MaibCun implements Input {
 
-
     @Override
+
     public  String nameCats() {
          String name = "Vasy";
              return name;
     }
+
     public  String nameEx() {
         String name = "EX";
         return name;

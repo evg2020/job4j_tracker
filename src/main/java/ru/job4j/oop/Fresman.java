@@ -1,4 +1,4 @@
 package ru.job4j.oop;
 
-public class Fresman extends Student{
+public class Fresman extends Student {
 }
