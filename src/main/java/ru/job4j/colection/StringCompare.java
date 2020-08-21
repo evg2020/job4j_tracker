@@ -20,12 +20,8 @@ public class StringCompare implements Comparator<String> {
             }
 
         }
-
-
         return res;
     }
-
-
 }
 
 

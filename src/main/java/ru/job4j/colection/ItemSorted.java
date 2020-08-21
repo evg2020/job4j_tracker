@@ -27,7 +27,6 @@ public class ItemSorted {
         return  items;
     }
 
-
     public static void main(String[] args) {
         List<Item> items = Arrays.asList(
                 new Item(7, "Ivan"),

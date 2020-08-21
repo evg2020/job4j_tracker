@@ -6,6 +6,11 @@ public class Product {
     private String name;
     private int count;
 
+    public Product(String name, int count) {
+        this.name = name;
+        this.count = count;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -20,11 +25,6 @@ public class Product {
         return Objects.hash(name, count);
     }
 
-    public Product(String name, int count) {
-        this.name = name;
-        this.count = count;
-    }
-
     public String getName() {
         return name;
     }
@@ -32,5 +32,4 @@ public class Product {
     public int getCount() {
         return count;
     }
-
 }

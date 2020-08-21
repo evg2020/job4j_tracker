@@ -28,6 +28,7 @@ public class JobSorter {
         }
 
 // -  - по приоритету и по убыванию
+
         public List<Job> sortByPriorDecr(List<Job> jobs) {
             Comparator<Job> combByPriorDecrease = new JobDescByPriorityDecrease();
             Collections.sort(jobs, combByPriorDecrease);
