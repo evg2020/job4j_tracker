@@ -18,7 +18,7 @@ public class ItemSortedTest {
         List<Item> items = Arrays.asList(
                 new Item(7, "Ivan"),
                 new Item(3, "VAnya"),
-                new Item(5, "ARoma") );
+                new Item(5, "ARoma"));
 
         List<Item> expect = Arrays.asList(
                 new Item(3, "VAnya"),
@@ -34,13 +34,13 @@ public class ItemSortedTest {
         List<Item> items = Arrays.asList(
                 new Item(7, "Ivan"),
                 new Item(3, "VAnya"),
-                new Item(5, "ARoma") );
+                new Item(5, "ARoma"));
 
         List<Item> expect = Arrays.asList(
 
                 new Item(7, "Ivan"),
                 new Item(5, "ARoma"),
-                new Item(3, "VAnya") );
+                new Item(3, "VAnya"));
         assertThat(sorts.sortReverse(items), is(expect));
     }
 
@@ -58,8 +58,6 @@ public class ItemSortedTest {
                 new Item(5, "ARoma"),
                 new Item(7, "Ivan"),
                 new Item(3, "VAnya")
-
-
         );
         assertThat(sorts.sortByName(items), is(expect));
     }
@@ -78,8 +76,6 @@ public class ItemSortedTest {
                 new Item(3, "VAnya"),
                 new Item(7, "Ivan"),
                 new Item(5, "ARoma")
-
-
 
         );
         assertThat(sorts.sortByNameReverse(items), is(expect));
