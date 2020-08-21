@@ -33,10 +33,7 @@ public class JobSorter {
             Comparator<Job> combByPriorDecrease = new JobDescByPriorityDecrease();
             Collections.sort(jobs, combByPriorDecrease);
             return jobs;
-
         }
-
-
     }
 
 

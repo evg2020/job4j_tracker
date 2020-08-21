@@ -2,7 +2,7 @@ package ru.job4j.encapsulation;
 import java.util.Date;
 
 public class License {
-    protected String owner;
+    private String owner;
     private String model;
     private String code;
     private Date created;
