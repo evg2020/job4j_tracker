@@ -14,7 +14,6 @@ public class Bus implements Transport {
 
     @Override
     public int fuelOnTheBoard(int fuel) {
-        int price = fuel * 1000;
-        return price ;
+                return fuel * 1000;
     }
 }

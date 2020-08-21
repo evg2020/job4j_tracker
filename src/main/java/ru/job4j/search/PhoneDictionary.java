@@ -47,9 +47,6 @@ public class PhoneDictionary {
             System.out.println(person.toString());
         }
         System.out.println(phones.getPersons().get(0).toString());
-//        находи в phone поле person с типом ArrayList<Person >, выбираем элемент 0 и из него выводим все поля на консоль
-//        ArrayList<Person> persons = phones.find("cow");
-
     }
 }
 

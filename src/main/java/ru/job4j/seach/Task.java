@@ -14,6 +14,7 @@ public class Task {
     }
 
     public int getPriority() {
+
         return priority;
     }
 
