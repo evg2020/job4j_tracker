@@ -3,6 +3,7 @@ package ru.job4j.tracker.oop;
 public class Cat {
    private  String food;
    private  String name;
+
    public void show() {
        System.out.println("There are food of cat " + this.name + " - " + this.food);
           }
@@ -10,6 +11,7 @@ public class Cat {
    public  void eat(String meal) {
        this.food = meal;
     }
+
     public void giveNick(String nick) {
        this.name = nick;
     }
@@ -23,8 +25,5 @@ public class Cat {
         black.eat("fish");
         black.giveNick(" Black ");
         black.show();
-
-
-
     }
 }

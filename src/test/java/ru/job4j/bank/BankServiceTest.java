@@ -15,7 +15,6 @@ public class BankServiceTest {
         assertThat(bank.findByPassport("3434"), is(user));
     }
 
-
     @Test
     public void addAccount() {
         User user = new User("3434", "Petr Arsentev");

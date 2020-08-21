@@ -13,6 +13,6 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator cal01 = new Calculator();
-        System.out.println(cal01.add(1,3,5));
+        System.out.println(cal01.add(1, 3, 5));
             }
 }

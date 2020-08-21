@@ -4,8 +4,7 @@ import java.util.Objects;
 
 public class Item {
     public int id;
-    public String name;
-
+    private String name;
 
     public Item() {
             }
@@ -40,8 +39,8 @@ public class Item {
         return "Item{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
 
-
     @Override
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

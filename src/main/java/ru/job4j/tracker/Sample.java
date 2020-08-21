@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 public class Sample {
     private final Item[] items = new Item[100];
     private int ids = 1;
-    public int size = 0;
+    private int size = 0;
 
     public Item[] getItems() {
         return items;
@@ -25,8 +25,6 @@ public class Sample {
         return item;
     }
 
-
-
     public static void main(String[] args) {
         Sample sample = new Sample();
         Item item = new Item();
@@ -38,7 +36,6 @@ public class Sample {
         sample.items[1] = item;
         String[] seasons = new String[4];
         int[] myArray = new int[10];
-
 
         System.out.println(sample.getItems()[0].getName());
         System.out.println(sample.getIds());

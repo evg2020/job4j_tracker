@@ -1,4 +1,4 @@
-package ru.job4j.colection.Job;
+package ru.job4j.colection;
 
 import org.junit.Test;
 import ru.job4j.colection.*;
@@ -11,7 +11,6 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-
 
 public class JobSorterTest {
 

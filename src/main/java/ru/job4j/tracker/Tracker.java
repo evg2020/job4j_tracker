@@ -5,10 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tracker {
-    List<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 //    private final Item[] items = new Item[100];
     private int ids = 1;
-
 
     public List<Item> getItems() {
         return items;

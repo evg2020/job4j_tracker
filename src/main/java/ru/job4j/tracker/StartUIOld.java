@@ -21,7 +21,6 @@ public class StartUIOld {
             }
         }
 
-
     private void showMenu(UserAction[] actions) {
      out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {

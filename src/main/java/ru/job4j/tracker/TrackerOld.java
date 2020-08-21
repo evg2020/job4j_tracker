@@ -46,11 +46,13 @@ public class TrackerOld {
          return res;
      }
 // возвращает значение ячейки при совпадение id
+
      public Item findById(int id) {
         int index = indexOf(id);
         return (index != -1) ? items[index] : null;
      }
 // заменяет
+
      public boolean replace(int id, Item item) {
         boolean res = false;
         int index = indexOf(id);

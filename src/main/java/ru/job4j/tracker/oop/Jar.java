@@ -17,8 +17,8 @@ public class Jar {
         Jar jar01 = new Jar(10);
         Jar jar02 = new Jar(5);
         Jar jar03 = new Jar(15);
-        System.out.println(jar01.volume + " "+ jar02.volume);
+        System.out.println(jar01.volume + " " + jar02.volume);
         jar01.pour(jar03);
-        System.out.println(jar01.volume + " "+ jar02.volume);
+        System.out.println(jar01.volume + " " + jar02.volume);
     }
 }
