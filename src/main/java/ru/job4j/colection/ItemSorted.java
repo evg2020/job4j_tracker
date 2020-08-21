@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
-
-
 public class ItemSorted {
 
     public List<Item> sort(List<Item> items) {

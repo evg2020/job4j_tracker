@@ -7,7 +7,7 @@ public class UsageArrayList {
     public static void main(String[] args) {
         ArrayList<String> names = new ArrayList<>();
         names.add("Petr");
-        names.add(1,"Ivan");
+        names.add(1, "Ivan");
         names.add("Stepan01");
         names.add("GGG");
         names.remove(3);

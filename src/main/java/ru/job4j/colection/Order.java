@@ -11,12 +11,13 @@ public class Order {
     this.number = number;
     this.name = name;
     }
+
     public String getNumber(){
         return number;
     }
 
-
     @Override
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

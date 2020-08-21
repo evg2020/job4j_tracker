@@ -26,7 +26,7 @@ public class JobSirter {
 
 // -  - по приоритету и по возрастанию
         Comparator<Job>  combByPriorIncrease = new JobDescByPriority();
-        Collections.sort(jobs, combByPriorIncrease );
+        Collections.sort(jobs, combByPriorIncrease);
         System.out.println(jobs);
 
 // -  - по приоритету и по убыванию
