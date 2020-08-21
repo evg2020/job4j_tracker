@@ -39,8 +39,8 @@ public class Item implements Comparable<Item> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return id == item.id &&
-                name.equals(item.name);
+        return id == item.id
+                &&  name.equals(item.name);
     }
 
     @Override

@@ -25,15 +25,14 @@ public class JobSirter {
         System.out.println(jobs);
 
 // -  - по приоритету и по возрастанию
-        Comparator<Job>  combByPriorIncrease = new JobDescByPriority();
+        Comparator<Job> combByPriorIncrease = new JobDescByPriority();
         Collections.sort(jobs, combByPriorIncrease);
         System.out.println(jobs);
 
 // -  - по приоритету и по убыванию
-        Comparator<Job>  combByPriorDecrease = new JobDescByPriorityDecrease();
-        Collections.sort(jobs, combByPriorDecrease );
+        Comparator<Job> combByPriorDecrease = new JobDescByPriorityDecrease();
+        Collections.sort(jobs, combByPriorDecrease);
         System.out.println(jobs);
-
     }
 }
 
