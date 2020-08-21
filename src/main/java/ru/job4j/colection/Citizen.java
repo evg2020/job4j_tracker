@@ -33,9 +33,12 @@ public class Citizen {
 
     @Override
     public String toString() {
-        return "Citizen{" +
-                "passport='" + passport + '\'' +
-                ", username='" + username + '\'' +
+        return "Citizen{"
+                +
+                "passport='" + passport + '\''
+                +
+                ", username='" + username + '\''
+                +
                 '}';
     }
 }

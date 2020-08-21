@@ -15,8 +15,10 @@ public class Cat {
 
     @Override
     public String toString() {
-        return "Cat{" +
-                "name='" + name + '\'' +
+        return "Cat{"
+                +
+                "name='" + name + '\''
+                +
                 '}';
     }
 
@@ -33,7 +35,7 @@ public class Cat {
             System.out.println(cats[i]);
             System.out.println(cat.name);
         }
-        System.out.println("===All item===" + System.lineSeparator() +
-                "Item{id=1, name='New Name'}" + System.lineSeparator());
+        System.out.println("===All item===" + System.lineSeparator()
+                + "Item{id=1, name='New Name'}" + System.lineSeparator());
     }
 }
