@@ -9,8 +9,12 @@ public class PhoneDictionary {
         return persons;
     }
 
+    public void setPersons(ArrayList<Person> persons) {
+        this.persons = persons;
+    }
+
     public void add(Person person) {
-        this.persons.add(person);
+        persons.add(person);
     }
 
     /**
@@ -21,7 +25,7 @@ public class PhoneDictionary {
      */
      /*String str = "twinkle twinkle little star";
     boolean got = str.contains("little");*/
-    public ArrayList<Person> find(String key) {
+    public  ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<Person>();
         for (Person value : persons) {
             if (value.getName().contains(key)
@@ -36,18 +40,23 @@ public class PhoneDictionary {
 
     @SuppressWarnings("checkstyle:EmptyLineSeparator")
     public static void main(String[] args) {
-        PhoneDictionary phones = new PhoneDictionary();
-        phones.add(
-                new Person("Ivan", "Ivanov", "1234", "Moscow")
+        PhoneDictionary list = new PhoneDictionary();
+
+        list.add(new Person("Ivan", "Ivanov", "12455", "Moscow")
         );
-        phones.add(
-                new Person("Petr", "Ivanov", "345", "Moscow")
+        list.add(new Person("Petr", "Ivanovs", "1245", "Moscow")
         );
-        for (Person person : phones.getPersons()) {
-            System.out.println(person.toString());
+        for (Person in : list.getPersons()){
+            System.out.println(in.toString());
         }
-        System.out.println(phones.getPersons().get(0).toString());
+
+        ArrayList<Person> res = list.find("1245");
+        for(Person in : res){
+            System.out.println(in.toString());
+        }
     }
+
+
 }
 
 

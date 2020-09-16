@@ -11,12 +11,13 @@ public class Car {
     }
 
 //перегрузка конструктора
-public Car(String modelName) {
+public Car(int maxSpeed, String modelName) {
+    this.model = modelName;
     this.maxSpeed = maxSpeed;
 }
 
     public static void main(String[] args) {
-        Car car01 = new Car("Citroen", 200);
+        Car car01 = new Car(200,"Citroen");
         System.out.println(car01.model);
         System.out.println(car01.maxSpeed);
     }

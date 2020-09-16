@@ -13,9 +13,6 @@ public class LicenseTest {
             first.setCode("audio");
             License second = new License();
             second.setCode("audio");
-          /*  boolean res = first.equals(second);
-            boolean expect = true;
-            assertThat(res, is(expect));*/
             assertThat(first, is(second));
     }
 }

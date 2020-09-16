@@ -21,7 +21,7 @@ public class Fact {
         public static void main(String[]args) {
 
             Fact fact = new Fact();
-            int n = -2;
+            int n = 3;
             int res = fact.calcFact(n);
             System.out.println("Факториал " + n + " = " + res);
         }

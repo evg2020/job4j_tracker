@@ -12,7 +12,7 @@ package ru.job4j.ex;
 import org.w3c.dom.ls.LSOutput;
 
 public class FindEl {
-    public  static int indexOf(String[] value, String key) throws ElementNotFoundExeption {
+    public  static int indexOf(String[] value, String key) throws ElementNotFoundExeption{
 
         int res = -1;
         for (int i = 0; i < value.length; i++) {

@@ -2,6 +2,7 @@ package ru.job4j.pojo;
 
 import org.junit.Test;
 
+
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
 
@@ -13,6 +14,9 @@ public class ShopTest {
         products[0] = new Product("Milk", 10);
         products[1] = new Product("Bread", 4);
         products[2] = new Product("Egg", 19);
+        int res = Shop.indexOfNull(products);
+        int expect = 3;
+        assertThat(res, is(expect));
         int rsl = Shop.indexOfNull(products);
         assertThat(rsl, is(3));
     }

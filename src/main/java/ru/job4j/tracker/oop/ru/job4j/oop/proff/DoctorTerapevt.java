@@ -6,7 +6,7 @@ public class DoctorTerapevt extends Doctor {
     }
 
     public static void main(String[] args) {
-        Teacher teach01 = new Teacher("Teacher Vova", "Ivanov", true, "01.01.2200");
+        Teacher teach01 = new Teacher("Teacher Vova", "Ivanov", "01.01.2200", true);
         System.out.println(teach01.getName());
         DoctorTerapevt docTer01 = new DoctorTerapevt("Ivan", "DoctorTerapevt", true, "01.01.2200");
         System.out.println(docTer01.getSurname());

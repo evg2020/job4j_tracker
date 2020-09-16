@@ -1,16 +1,18 @@
 package ru.job4j.tracker.oop.ru.job4j.oop.proff;
 
 public class Profession {
-    private String name;
+
     private String surname;
     private boolean education;
     private String birthday;
+    private String name;
 
     public Profession(String name, String surname, boolean education, String birthday) {
-        this.name = name;
+
         this.surname = surname;
         this.education = education;
         this.birthday = birthday;
+        this.name = name;
     }
 
      public String getName() {

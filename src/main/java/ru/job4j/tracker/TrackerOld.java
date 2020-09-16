@@ -34,48 +34,48 @@ public class TrackerOld {
         return Arrays.copyOf(items, size); // возврат нового масива с уменьшенной длинной
     }
 
-// возвращает индек ячейки массива items при совпадени номера id
-     private  int indexOf(int id) {
+    // возвращает индек ячейки массива items при совпадени номера id
+    private int indexOf(int id) {
         int res = -1;
-         for (int i = 0; i < size; i++) {
-             if (items[i].getId() == id) {
-                 res = i;
-                 break;
-             }
-         }
-         return res;
-     }
+        for (int i = 0; i < size; i++) {
+            if (items[i].getId() == id) {
+                res = i;
+                break;
+            }
+        }
+        return res;
+    }
 // возвращает значение ячейки при совпадение id
 
-     public Item findById(int id) {
+    public Item findById(int id) {
         int index = indexOf(id);
         return (index != -1) ? items[index] : null;
-     }
+    }
 // заменяет
 
-     public boolean replace(int id, Item item) {
+    public boolean replace(int id, Item item) {
         boolean res = false;
         int index = indexOf(id);
-         if (index != -1) {
-             item.setId(id);
-             items[index] = item;
-             res = true;
-                }
+        if (index != -1) {
+            item.setId(id);
+            items[index] = item;
+            res = true;
+        }
         return res;
-     }
+    }
 
-     public  boolean  delete(int id) {
-         boolean res = false;
-         int index = indexOf(id);
-         items[index] = null;
-         if (index != -1) {
-             System.arraycopy(items, index + 1, items, index, size - index);
-             items[size - 1] = null;
-             size--;
-             res = true;
-         }
-         return res;
-     }
+    public boolean delete(int id) {
+        boolean res = false;
+        int index = indexOf(id);
+        items[index] = null;
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index);
+            items[size - 1] = null;
+            size--;
+            res = true;
+        }
+        return res;
+    }
 
 }
 

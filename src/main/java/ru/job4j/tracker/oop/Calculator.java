@@ -2,7 +2,7 @@ package ru.job4j.tracker.oop;
 
 public class Calculator {
     public double add(double a, double b) {
-        return a - b;
+        return a + b;
     }
 
     public double add(double a, double b, double c) {

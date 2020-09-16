@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 import org.w3c.dom.ls.LSOutput;
 
 public class Cat {
-
     private String name;
 
     public Cat() {

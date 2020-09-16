@@ -1,4 +1,5 @@
 package ru.job4j.pojo;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,10 +12,8 @@ public class License {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         License license = (License) o;
-        return    Objects.equals(code, license.code);
+        return Objects.equals(code, license.code);
     }
 
     @Override
@@ -53,12 +52,7 @@ public class License {
     public void setCreated(Date created) {
         this.created = created;
     }
-    //переопределяем метод для сравнения определенных полей обьекта класса License;
-/*
-    public boolean equals(License that) {
-        return this.code == that.code && this.model = that.model;
 
-        }*/
 
     public static void main(String[] args) {
         License lic01 = new License();

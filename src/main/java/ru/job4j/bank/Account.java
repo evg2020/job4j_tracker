@@ -12,6 +12,19 @@ public class Account {
         this.balance = balance;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            Account account = (Account) o;
+            return Double.compare(account.balance, balance) == 0
+                    && requisite.equals(account.requisite);
+          }
+
     public String getRequisite() {
         return requisite;
     }
@@ -26,16 +39,6 @@ public class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-            if (o == null || getClass() != o.getClass())
-                return false;
-                Account account = (Account) o;
-                return requisite.equals(account.requisite);
     }
 
     @Override
