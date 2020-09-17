@@ -29,7 +29,7 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)  {
         User user = (User) o;
         return passport.equals(user.passport); // сравниваем клиентов только по номеру паспорта
     }

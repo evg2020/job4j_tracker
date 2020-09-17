@@ -1,7 +1,7 @@
 package ru.job4j.tracker.strategy;
 
 public class Picture {
-    public  void draw(Shape shape){
+    public  void draw(Shape shape) {
         System.out.println(shape.draw());
     }
 

@@ -16,7 +16,7 @@ public class JobSirter {
 
 //  - по имени и по возрастанию
         Comparator<Job> combBNameIncrease = new JobDescByName();
-        Collections.sort(jobs, combBNameIncrease);
+        Collections.sort(jobs, new JobDescByName());
         System.out.println(jobs);
 
 // - по имени и по убыванию
@@ -25,13 +25,13 @@ public class JobSirter {
         System.out.println(jobs);
 
 // -  - по приоритету и по возрастанию
-        Comparator<Job> combByPriorIncrease = new JobDescByPriority();
-        Collections.sort(jobs, combByPriorIncrease);
+
+        Collections.sort(jobs, new JobDescByName());
         System.out.println(jobs);
 
 // -  - по приоритету и по убыванию
-        Comparator<Job> combByPriorDecrease = new JobDescByPriorityDecrease();
-        Collections.sort(jobs, combByPriorDecrease);
+
+        Collections.sort(jobs, new JobDescByPriority().thenComparing(new JobDescByName()));
         System.out.println(jobs);
     }
 }

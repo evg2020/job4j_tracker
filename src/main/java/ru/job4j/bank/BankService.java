@@ -18,6 +18,7 @@ import java.util.Map;
 */
 
 public class BankService {
+
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
@@ -44,8 +45,6 @@ public class BankService {
             }
         }
     }
-
-
 
     public Account findByRequisite(String passport, String requisite) {
         Account accountUser = null;

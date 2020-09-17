@@ -17,7 +17,7 @@ public Car(int maxSpeed, String modelName) {
 }
 
     public static void main(String[] args) {
-        Car car01 = new Car(200,"Citroen");
+        Car car01 = new Car(200, "Citroen");
         System.out.println(car01.model);
         System.out.println(car01.maxSpeed);
     }

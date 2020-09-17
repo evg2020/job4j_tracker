@@ -5,7 +5,7 @@ import static java.lang.Math.pow;
 
 public class Dist {
     public double dist(Point a, Point b) {
-        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+        return sqrt(pow(a.getX() - b.getX(), 2) + pow(a.getY() - b.getY(), 2));
     }
 
     public static void main(String[] args) {

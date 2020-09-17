@@ -25,7 +25,7 @@ public class PhoneDictionary {
      */
      /*String str = "twinkle twinkle little star";
     boolean got = str.contains("little");*/
-    public  ArrayList<Person> find(String key) {
+    public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<Person>();
         for (Person value : persons) {
             if (value.getName().contains(key)
@@ -39,24 +39,22 @@ public class PhoneDictionary {
     }
 
     @SuppressWarnings("checkstyle:EmptyLineSeparator")
+
     public static void main(String[] args) {
         PhoneDictionary list = new PhoneDictionary();
-
         list.add(new Person("Ivan", "Ivanov", "12455", "Moscow")
         );
         list.add(new Person("Petr", "Ivanovs", "1245", "Moscow")
         );
-        for (Person in : list.getPersons()){
+        for (Person in : list.getPersons()) {
             System.out.println(in.toString());
         }
 
         ArrayList<Person> res = list.find("1245");
-        for(Person in : res){
+        for (Person in : res) {
             System.out.println(in.toString());
         }
     }
-
-
 }
 
 

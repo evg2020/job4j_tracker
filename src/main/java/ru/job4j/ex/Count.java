@@ -11,7 +11,8 @@ public class Count {
         }
         return  res;
     }
-    public static void main(String[] args){
+
+     public static void main(String[] args) {
         System.out.println(add(6, 4));
     }
 }

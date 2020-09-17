@@ -16,7 +16,7 @@ public class Cat {
          System.out.println(this.food + "" + this.name);
      }
 
-    public String sound(){
+    public String sound() {
         String voice = "may-may";
         return voice;
     }

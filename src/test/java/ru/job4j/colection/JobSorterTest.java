@@ -22,7 +22,7 @@ public class JobSorterTest {
                 new Job("Fix bug", 2),
                 new Job("A task", 2));
         Comparator<Job> combBNameIncrease = new JobDescByName();
-        Collections.sort(result, combBNameIncrease);
+        Collections.sort(result, new JobDescByName());
         List<Job> expect = Arrays.asList(
                 new Job("A task", 2),
                 new Job("Fix bug", 2),

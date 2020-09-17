@@ -53,7 +53,6 @@ public class License {
         this.created = created;
     }
 
-
     public static void main(String[] args) {
         License lic01 = new License();
         lic01.code = "audio";
