@@ -28,9 +28,9 @@ public class SearchAtt {
 
     private static List<Attachment> loop(List<Attachment> list, Predicate<Attachment> predicate) {
         List<Attachment> result = new ArrayList<>();
-        for (Attachment attachment : list) {
-            if (predicate.test(attachment)) {
-                result.add(attachment);
+        for (Attachment att : list) {
+            if (predicate.test(att)) {
+                result.add(att);
             }
         }
         return result;
@@ -42,7 +42,7 @@ public class SearchAtt {
                 new Attachment("bug", 22),
                 new Attachment("zz bug", 133)
         );
-        List<Attachment> lists = filter(list, 100);
+        List<Attachment> lists = filter(list, "bug");
         for (Attachment at : lists) {
             System.out.println(at);
         }
