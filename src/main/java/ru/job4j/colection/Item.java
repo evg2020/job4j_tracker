@@ -1,5 +1,7 @@
 package ru.job4j.colection;
 
+import java.util.Objects;
+
 public class Item implements Comparable<Item> {
     private int id;
     private String name;
@@ -35,19 +37,21 @@ public class Item implements Comparable<Item> {
     }
 
     @Override
+    public int compareTo(Item another) {
+        return Integer.compare(id, another.id);
+    }
+
+    @Override
     public boolean equals(Object o) {
-               Item item = (Item) o;
-        return id == item.id
-                &&  name.equals(item.name);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id &&
+                name.equals(item.name);
     }
 
     @Override
     public int hashCode() {
-        return 0;
-    }
-
-    @Override
-    public int compareTo(Item another) {
-        return Integer.compare(id, another.id);
+        return Objects.hash(id, name);
     }
 }
