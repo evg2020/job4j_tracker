@@ -31,6 +31,7 @@ public class FreezeStr {
         String right = "olleh df";
 
         System.out.println(eq(left, right));
+
     }
 }
 
