@@ -16,22 +16,22 @@ public class FreezeStr03 {
                 map.put(word, count);
             }
         }
-            System.out.println(map);
+        System.out.println(map);
 
-            for (String wordLines : lines) {
-                if (map.containsKey(wordLines)) {
-                    if (map.get(wordLines) > 1 && map.get(wordLines) != null) {
-                        Integer count = map.get(wordLines) - 1;
-                        map.put(wordLines, count);
-                    } else {
-                        map.remove(wordLines);
-                    }
+        for (String wordLines : lines) {
+            if (map.containsKey(wordLines)) {
+                if (map.get(wordLines) > 1 && map.get(wordLines) != null) {
+                    Integer count = map.get(wordLines) - 1;
+                    map.put(wordLines, count);
+                } else {
+                    map.remove(wordLines);
                 }
+            }
 
-            }
-            if (map.size() > 0) {
-                res = false;
-            }
+        }
+        if (map.size() > 0) {
+            res = false;
+        }
 
         System.out.println(map);
         return res;
