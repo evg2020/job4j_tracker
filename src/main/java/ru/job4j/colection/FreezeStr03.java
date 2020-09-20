@@ -5,37 +5,41 @@ import java.util.HashMap;
 public class FreezeStr03 {
     public static boolean eq(String origin, String line) {
         boolean res = true;
-        Integer count = 1;
         String[] origins = origin.split("");
         String[] lines = line.split("");
         HashMap<String, Integer> map = new HashMap<>();
         for (String word : origins) {
-            map.putIfAbsent(word, count);
-            if (map.containsKey(word)) {
-                count++;
+            if (!map.containsKey(word)) {
+                map.putIfAbsent(word, 1);
+            } else {
+                Integer count = map.get(word) + 1;
+                map.put(word, count);
             }
+        }
+            System.out.println(map);
+
             for (String wordLines : lines) {
                 if (map.containsKey(wordLines)) {
-                    count--;
-                    map.put(wordLines, count);
-                    if(count == 0 ){
+                    if (map.get(wordLines) > 1 && map.get(wordLines) != null) {
+                        Integer count = map.get(wordLines) - 1;
+                        map.put(wordLines, count);
+                    } else {
                         map.remove(wordLines);
                     }
                 }
+
             }
             if (map.size() > 0) {
                 res = false;
             }
-        }
+
         System.out.println(map);
         return res;
     }
 
     public static void main(String[] args) {
-        eq("hello", "heloo");
-        System.out.println();
+        System.out.println(eq("heloo", "hello"));
     }
-
 }
 
 
