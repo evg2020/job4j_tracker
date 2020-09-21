@@ -29,13 +29,14 @@ public class FreezeStr03 {
             }
 
         }
-        if (map.size() > 0) {
+        return (map.size() == 0);
+    }
+       /* if (map.size() > 0) {
             res = false;
         }
 
-        System.out.println(map);
         return res;
-    }
+    }*/
 
     public static void main(String[] args) {
         System.out.println(eq("heloo", "hello"));
