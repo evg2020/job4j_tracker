@@ -26,6 +26,5 @@ public class FI {
 
         Arrays.sort(atts, comparator);
 
-
     }
 }
