@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class FreezeStr03 {
     public static boolean eq(String origin, String line) {
-        boolean res = true;
         String[] origins = origin.split("");
         String[] lines = line.split("");
         HashMap<String, Integer> map = new HashMap<>();
@@ -39,7 +38,7 @@ public class FreezeStr03 {
     }*/
 
     public static void main(String[] args) {
-        System.out.println(eq("heloo", "hello"));
+        System.out.println(eq("helooo", "heoool"));
     }
 }
 

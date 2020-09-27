@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public class FreezeStr {
     public static boolean eq(String left, String right) {
-        boolean res = true;
+
 
         char[] lefts = left.toCharArray();
         char[] rights = right.toCharArray();
@@ -20,15 +20,12 @@ public class FreezeStr {
             int ascii = (int) right01;
             rightIntSumm += ascii;
         }
-        if (leftIntSumm != rightIntSumm) {
-            res = false;
-        }
-        return res;
+        return (leftIntSumm == rightIntSumm);
     }
 
     public static void main(String[] args) {
         String left = "hello df";
-        String right = "olleh df";
+        String right = "oloeh df";
 
         System.out.println(eq(left, right));
 

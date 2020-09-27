@@ -22,7 +22,7 @@ public class ItemSorted {
         return items;
     }
 
-    public List<Item> sortByNameReverse(List<Item> items) {
+    public static List<Item> sortByNameReverse(List<Item> items) {
         Collections.sort(items, new SoftByNameReverse());
         return  items;
     }
@@ -46,6 +46,7 @@ public class ItemSorted {
 
         Collections.sort(items, Collections.reverseOrder());
         System.out.println(items);
+        ItemSorted.sortByNameReverse(items);
     }
 
 }
