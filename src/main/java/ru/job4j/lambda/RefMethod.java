@@ -11,13 +11,14 @@ public class RefMethod {
             System.out.println(value.substring(0, 10) + "..");
         } else {
             System.out.println(value);
-  }
+        }
+
     }
 
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Ivan", "Vanya Petrovich");
-//        Consumer<String> out = (name) -> cutOut(name)
-  Consumer<String> out = RefMethod::cutOut;
+//      Consumer<String> out = (name) -> cutOut(name);
+        Consumer<String> out = RefMethod::cutOut;
         names.forEach(out);
     }
 
