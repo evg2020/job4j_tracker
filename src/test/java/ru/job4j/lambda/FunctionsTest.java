@@ -27,7 +27,7 @@ public class FunctionsTest {
 
     @Test
     public void exponetFunc() {
-        List<Double> result = Functions.diapason(2, 4, x -> (double)3 * ???);
+        List<Double> result = Functions.diapason(2, 4, x -> Math.pow(3,x));
         List<Double> expected = Arrays.asList(9D, 27D);
         assertThat(result, is(expected));
     }
