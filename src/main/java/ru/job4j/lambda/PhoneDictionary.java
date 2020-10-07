@@ -21,7 +21,7 @@ public class PhoneDictionary {
                 || findByAddress.test(person);
         ArrayList<Person> result = new ArrayList<Person>();
         for (Person person : persons) {
-            if (combine.test(person) ) {
+            if (combine.test(person)) {
                 result.add(person);
             }
         }

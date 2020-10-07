@@ -20,11 +20,14 @@ public class FI {
         // Стало с Лябда выражением
 
         Comparator<Attachment> comparator = (left, right) -> {
-            System.out.println("compare " + left.getSize() + ":" + right.getSize());
             return right.getSize() - left.getSize();
         };
 
         Arrays.sort(atts, comparator);
+        for(Attachment att : atts){
+            System.out.println(att.toString());
+        }
+
 
     }
 }
