@@ -27,7 +27,7 @@ public class Stream {
         tasks.stream()
                 .filter(task -> task.name.contains("Bug"))
                 .filter(task -> task.spend > 30)
-                .map(task -> task.name + " " + task.spend)
+                .map(task -> task.name + " + " + task.spend)
                 .forEach(System.out::println);
     }
 }

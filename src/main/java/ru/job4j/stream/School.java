@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 
 public class School {
-//    Predicate<Student> predict = (Student student) ->student.getScore() >= 70;
 
     public List<Student> collect(List<Student> students, Predicate<Student> predict) {
         return students.stream()
