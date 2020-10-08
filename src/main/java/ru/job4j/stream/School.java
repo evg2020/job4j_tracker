@@ -4,6 +4,7 @@ import ru.job4j.lambda.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -15,4 +16,11 @@ public class School {
                 .filter(predict)
                 .collect(Collectors.toList());
     }
+
+    public Map<String, Student> listToMap(List<Student> students) {
+        return students.stream()
+                .distinct()
+                .collect(Collectors.toMap(Student::getName, student -> student));
+    }
+
 }

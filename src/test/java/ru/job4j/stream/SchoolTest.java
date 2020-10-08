@@ -7,8 +7,10 @@ import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.Map;
 
 public class SchoolTest {
     private List<Student> students = new ArrayList<>();
@@ -54,7 +56,6 @@ public class SchoolTest {
     public void whenCollectClassC() {
         School sc = new School();
         Predicate<Student> predictC = (Student student) -> student.getScore() < 50 && student.getScore() > 0;
-//        predictC.test(student);
         List<Student> res = sc.collect(students, predictC);
         List<Student> expect = new ArrayList<>();
         expect.add(new Student(10, "Surname1"));
@@ -63,4 +64,14 @@ public class SchoolTest {
         expect.add(new Student(40, "Surname4"));
         assertThat(res, is(expect));
     }
+
+
+    @Test
+    public void whenCreateMap() {
+        School sc = new School();
+        Map<String, Student> res = sc.listToMap(students);
+        Student expect = new Student(20, "Surname2");
+        assertThat(res.get("Surname2"), is(expect));
+    }
+
 }

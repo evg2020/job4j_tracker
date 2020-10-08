@@ -23,18 +23,10 @@ public class ProfilesTest {
         proff.add(new Profile(new Address("Moscow02", "Lenina02", 2, 2)));
         proff.add(new Profile(new Address("Moscow", "Lenina", 1, 1)));
 
-    }
-
-    @Before
-
-    public void addAddressAll() {
         expectAll.add(new Address("Moscow", "Lenina", 1, 1));
         expectAll.add(new Address("Moscow02", "Lenina02", 2, 2));
         expectAll.add(new Address("Moscow", "Lenina", 1, 1));
-    }
-    @Before
 
-    public void addAddressUniq() {
         uniq.add(new Address("Moscow", "Lenina", 1, 1));
         uniq.add(new Address("Moscow02", "Lenina02", 2, 2));
     }
@@ -51,4 +43,5 @@ public class ProfilesTest {
         Profiles prof = new Profiles();
         assertThat(prof.collectUniq(proff), is(uniq));
     }
+
 }

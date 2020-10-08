@@ -16,22 +16,25 @@ public class Student {
         return  name;
     }
 
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return score == student.score &&
-                name.equals(student.name);
+        return name.equals(student.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(score, name);
+        return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "score=" + score +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
