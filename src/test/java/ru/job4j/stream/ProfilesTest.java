@@ -43,5 +43,4 @@ public class ProfilesTest {
         Profiles prof = new Profiles();
         assertThat(prof.collectUniq(proff), is(uniq));
     }
-
 }
