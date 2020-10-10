@@ -34,6 +34,15 @@ public class BankServiceTest {
     }
 
     @Test
+    public void findByNonePassport() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new Account("5546", 150D));
+        assertThat(bank.findByPassport("333"), is("null"));
+    }
+
+    @Test
     public void findByRequisite() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();

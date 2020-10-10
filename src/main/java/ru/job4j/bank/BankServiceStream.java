@@ -18,7 +18,7 @@ public class BankServiceStream {
         users.putIfAbsent(user, new ArrayList<Account>());
     }
 
-    public Optional<User> findByPassport(String passport) {
+    public User findByPassport(String passport) {
         /*User user = null;
         for (User user01 : users.keySet()) {
             if (user01.getPassport().equals(passport)) {
@@ -28,14 +28,15 @@ public class BankServiceStream {
         }
         return user;
     }*/
-        return users.keySet().stream()
+
+        return  users.keySet().stream()
                 .filter(use -> use.getPassport().equals(passport))
-                .findFirst();
+                .findFirst().orElse(null);
     }
 
 
     public void addAccount(String passport, Account account) {
-        User user = findByPassport(passport).orElse(null);
+        User user = findByPassport(passport);
         List<Account> accountsList = users.get(user);
         if (user != null) {
             if (!users.containsValue(account)) {
@@ -57,7 +58,7 @@ public class BankServiceStream {
             }
         }*/
         Account accountUser = null;
-        User user = findByPassport(passport).orElse(null);
+        User user = findByPassport(passport);
         if (user != null) {
             accountUser = users.get(user).stream()
                     .filter(s -> s.getRequisite().equals(requisite))
