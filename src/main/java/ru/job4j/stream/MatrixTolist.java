@@ -17,10 +17,11 @@ public class MatrixTolist {
         Integer[][] matrix02 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
 
-        Stream.of(matrix02)
+        List<Integer> collection = Stream.of(matrix02)
                 .flatMap(Stream::of)           // .flatMap(i->stream.of(i))
-                .collect(Collectors.toList())
-                .forEach(System.out::print);
+                .collect(Collectors.toList());
+
+
     }
 }
 
