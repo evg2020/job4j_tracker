@@ -18,6 +18,20 @@ public class MatrixTolist {
         List<Integer> collection = Stream.of(matrix02)
                 .flatMap(Stream::of)           // .flatMap(i->stream.of(i))
                 .collect(Collectors.toList());
+        System.out.println(collection);
+
+
+        String[][] dataSet = new String[][] {{"AAA", "BBB"}, {"CCC", "DDD"},};
+        List<List<String>>list = Arrays.stream(dataSet)
+                .map(Arrays::asList)
+                .collect(Collectors.toList());
+        System.out.println(list);
+
+        String[][] dataSet02 = new String[][] {{"AAA", "BBB"}, {"CCC", "DDD"},};
+        List<String>list02 = Stream.of(dataSet02)
+                .flatMap(Stream::of)
+                .collect(Collectors.toList());
+        System.out.println(list02);
     }
 }
 

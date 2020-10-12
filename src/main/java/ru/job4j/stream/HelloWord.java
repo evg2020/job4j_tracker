@@ -4,6 +4,9 @@ import java.util.stream.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.List;
+import java.util.Map;
+
 
 public class HelloWord {
     public static void main(String[] args) {
@@ -21,7 +24,18 @@ public class HelloWord {
                 .min(Integer::compare);
         System.out.println(min.get());  // 1
 
+        List<String> fruits = Stream.of("Hallo", " Word")
+                // здесь могут быть ещё какие-то преобразования
+                .collect(Collectors.toList());
+        System.out.print(fruits);
 
+//        А можно преобразовать стрим из строк в мапу,
+//        причём ключом сделать первую букву соответствующего слова:
+
+        Map<String, String> fruit = Stream.of("apple", "banana", "lemon", "orange")
+                .collect(Collectors.toMap(e -> e.substring(0, 1), e -> e));
+        System.out.println(fruit);
+        // {a=apple, b=banana, l=lemon, o=orange}
 
 }
 }
