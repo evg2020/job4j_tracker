@@ -1,11 +1,12 @@
 package ru.job4j.stream;
+
 import java.util.Objects;
 
 public class Student {
-    private int score;
-    private String name;
+    private int score; // Проходной балл
+    private String name; //ФИО
 
-    public Student(int score, String name){
+    public Student( int score, String name ){
         this.score = score;
         this.name = name;
     }
@@ -15,8 +16,6 @@ public class Student {
     public String getName(){
         return  name;
     }
-
-
 
 
     @Override
@@ -39,5 +38,13 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(score, name);
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
