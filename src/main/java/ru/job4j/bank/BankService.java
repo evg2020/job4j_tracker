@@ -28,7 +28,7 @@ public class BankService {
 
     public Optional<User> findByPassport(String passport) {
 //        User user = null;
-        Optional<User> res =Optional.empty();
+        Optional<User> res = Optional.empty();
         for (User user01 : users.keySet()) {
             if (user01.getPassport().equals(passport)) {
                 res = Optional.of(user01);
@@ -83,9 +83,11 @@ public class BankService {
     public static void main(String[] args) {
         BankService bank = new BankService();
         bank.addUser((new User("2222", "Petr Arsentev")));
-        Optional<User> opt = bank.findByPassport("111");
+        Optional<User> opt = bank.findByPassport("11");
         if (opt.isPresent()) {
             System.out.println(opt.get().getUsername());
+        }else{
+            System.out.println(Optional.empty());
         }
     }
 

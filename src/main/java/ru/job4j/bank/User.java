@@ -12,6 +12,10 @@ public class User {
         this.username = username;
     }
 
+    public User() {
+    }
+
+
     public String getPassport() {
         return passport;
     }

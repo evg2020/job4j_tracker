@@ -28,11 +28,11 @@ public class BankServiceStream {
         }
         return user;
     }*/
-Optional<User> res = Optional.empty();
+        Optional<User> res = Optional.empty();
         res = users.keySet().stream()
                 .filter(use -> use.getPassport().equals(passport))
                 .findFirst();
-        return res;
+         return res;
     }
 
 
@@ -83,6 +83,17 @@ Optional<User> res = Optional.empty();
             res = true;
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        BankService bank = new BankService();
+        bank.addUser((new User("2222", "Petr Arsentev")));
+        Optional<User> opt = bank.findByPassport("11");
+        if (opt.isPresent()) {
+            System.out.println(opt.get().getUsername());
+        }else{
+            System.out.println(Optional.empty());
+        }
     }
 
 }
