@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /*
 1. Регистрировать пользователя.
@@ -25,19 +26,20 @@ public class BankService {
         users.putIfAbsent(user, new ArrayList<Account>());
     }
 
-    public User findByPassport(String passport) {
-        User user = null;
+    public Optional<User> findByPassport(String passport) {
+//        User user = null;
+        Optional<User> res =Optional.empty();
         for (User user01 : users.keySet()) {
             if (user01.getPassport().equals(passport)) {
-                user = user01;
+                res = Optional.of(user01);
                 break;
             }
         }
-        return user;
+        return res;
     }
 
     public void addAccount(String passport, Account account) {
-        User user = findByPassport(passport);
+        User user = findByPassport(passport).get();
         List<Account> accountsList = users.get(user);
         if (user != null) {
             if (!users.containsValue(account)) {
@@ -46,27 +48,28 @@ public class BankService {
         }
     }
 
-    public Account findByRequisite(String passport, String requisite) {
-        Account accountUser = null;
-        User user = findByPassport(passport);
+    public Optional<Account> findByRequisite(String passport, String requisite) {
+        Optional<Account> opt = Optional.empty();
+//        Account accountUser = null;
+        User user = findByPassport(passport).get();
         if (user != null) {
             List<Account> userAccounts = users.get(user);
             for (int i = 0; i < userAccounts.size(); i++) {
                 if (userAccounts.get(i).getRequisite().equals(requisite)) {
-                    accountUser = userAccounts.get(i);
+                    opt = Optional.of(userAccounts.get(i));
                     break;
                 }
             }
         }
-        return accountUser;
+        return opt;
 
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean res = false;
-        Account account01 = findByRequisite(srcPassport, srcRequisite);
-        Account account02 = findByRequisite(destPassport, destRequisite);
+        Account account01 = findByRequisite(srcPassport, srcRequisite).get();
+        Account account02 = findByRequisite(destPassport, destRequisite).get();
         if (account01 != null && account02 != null && account01.getBalance() >= amount) {
             double newBalance = account02.getBalance() + amount;
             double changedBalance = account01.getBalance() - amount;
@@ -75,6 +78,15 @@ public class BankService {
             res = true;
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        BankService bank = new BankService();
+        bank.addUser((new User("2222", "Petr Arsentev")));
+        Optional<User> opt = bank.findByPassport("111");
+        if (opt.isPresent()) {
+            System.out.println(opt.get().getUsername());
+        }
     }
 
 }

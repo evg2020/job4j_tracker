@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class BankServiceTest {
+public class BankServiceStreamTest {
 
     @Test
     public void addUser() {
@@ -25,12 +25,12 @@ public class BankServiceTest {
     }
 
     @Test
-    public void findByInvalidPassport() {
+    public void findByPassport() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertNull(bank.findByPassport("333").orElse(null));// проверка на нулл
+        assertThat(bank.findByPassport("3434").get().getPassport(), is("3434"));
     }
 
     @Test
@@ -42,17 +42,6 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new Account("5555", 150D));
         assertThat(bank.findByRequisite("3434", "5546").get().getBalance(), is(150D));
     }
-
-    @Test
-    public void findByInvalidRequisite() {
-        User user = new User("3434", "Petr Arsentev");
-        BankService bank = new BankService();
-        bank.addUser(user);
-        bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        bank.addAccount(user.getPassport(), new Account("5555", 150D));
-        assertNull(bank.findByRequisite("3434", "111").orElse(null));
-    }
-
 
     @Test
     public void whenEnterInvalidPassport() {
