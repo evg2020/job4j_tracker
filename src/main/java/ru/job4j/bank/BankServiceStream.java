@@ -19,20 +19,12 @@ public class BankServiceStream {
     }
 
     public Optional<User> findByPassport(String passport) {
-        /*User user = null;
-        for (User user01 : users.keySet()) {
-            if (user01.getPassport().equals(passport)) {
-                user = user01;
-                break;
-            }
-        }
-        return user;
-    }*/
+
         Optional<User> res = Optional.empty();
-        res = users.keySet().stream()
+        return users.keySet().stream()
                 .filter(use -> use.getPassport().equals(passport))
                 .findFirst();
-         return res;
+
     }
 
 
@@ -47,17 +39,7 @@ public class BankServiceStream {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-       /* Account accountUser = null;
-        User user = findByPassport(passport);
-        if (user != null) {
-            List<Account> userAccounts = users.get(user);
-            for (int i = 0; i < userAccounts.size(); i++) {
-                if (userAccounts.get(i).getRequisite().equals(requisite)) {
-                    accountUser = userAccounts.get(i);
-                    break;
-                }
-            }
-        }*/
+
         Account accountUser = null;
         User user = findByPassport(passport).get();
         if (user != null) {
@@ -88,6 +70,7 @@ public class BankServiceStream {
     public static void main(String[] args) {
         BankService bank = new BankService();
         bank.addUser((new User("2222", "Petr Arsentev")));
+
         Optional<User> opt = bank.findByPassport("11");
         if (opt.isPresent()) {
             System.out.println(opt.get().getUsername());
