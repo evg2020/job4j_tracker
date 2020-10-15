@@ -29,7 +29,8 @@ public class BankServiceStream {
 
 
     public void addAccount(String passport, Account account) {
-        User user = findByPassport(passport).get();
+        User user = findByPassport(passport)
+                .orElseThrow(() ->new NullPointerException("нет пользователя с таким паспортом"));
         List<Account> accountsList = users.get(user);
         if (user != null) {
             if (!users.containsValue(account)) {
@@ -38,25 +39,29 @@ public class BankServiceStream {
         }
     }
 
-    public Account findByRequisite(String passport, String requisite) {
+    public Optional<Account> findByRequisite(String passport, String requisite) {
 
-        Account accountUser = null;
-        User user = findByPassport(passport).get();
+       Optional<Account> optAcc = Optional.empty();
+        User user = findByPassport(passport)
+                .orElseThrow(() ->new NullPointerException("нет пользователя с таким паспортом"));
         if (user != null) {
-            accountUser = users.get(user).stream()
+            optAcc = users.get(user).stream()
                     .filter(s -> s.getRequisite().equals(requisite))
-                    .findFirst().orElse(null);
+                    .findFirst();
 
         }
-        return accountUser;
+        return optAcc;
     }
 
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean res = false;
-        Account account01 = findByRequisite(srcPassport, srcRequisite);
-        Account account02 = findByRequisite(destPassport, destRequisite);
+        Account account01 = findByRequisite(srcPassport, srcRequisite)
+                .orElseThrow(() ->new NullPointerException("проверьте №паспорта и счета "));
+        Account account02 = findByRequisite(destPassport, destRequisite)
+                .orElseThrow(() ->new NullPointerException("проверьте №паспорта и счета "));
+
         if (account01 != null && account02 != null && account01.getBalance() >= amount) {
             double newBalance = account02.getBalance() + amount;
             double changedBalance = account01.getBalance() - amount;
