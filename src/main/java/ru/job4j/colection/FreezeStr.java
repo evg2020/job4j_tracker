@@ -9,7 +9,6 @@ import java.util.HashSet;
 public class FreezeStr {
     public static boolean eq(String left, String right) {
 
-
         char[] lefts = left.toCharArray();
         char[] rights = right.toCharArray();
         int leftIntSumm = 0;

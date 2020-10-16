@@ -28,11 +28,11 @@ public class SchoolTest {
         students.add(new Student(90, "Surname9"));
     }
 
-
     @Test
     public void whenCollectClassA() {
         School sc = new School();
-        Predicate<Student> predictA = (Student student) -> student.getScore() >= 70 && student.getScore() <= 100;
+        Predicate<Student> predictA =
+                (Student student) -> student.getScore() >= 70 && student.getScore() <= 100;
         List<Student> res = sc.collect(students, predictA);
         List<Student> expect = new ArrayList<>();
         expect.add(new Student(70, "Surname7"));
@@ -55,7 +55,8 @@ public class SchoolTest {
     @Test
     public void whenCollectClassC() {
         School sc = new School();
-        Predicate<Student> predictC = (Student student) -> student.getScore() < 50 && student.getScore() > 0;
+        Predicate<Student> predictC =
+                (Student student) -> student.getScore() < 50 && student.getScore() > 0;
         List<Student> res = sc.collect(students, predictC);
         List<Student> expect = new ArrayList<>();
         expect.add(new Student(10, "Surname1"));
@@ -64,7 +65,6 @@ public class SchoolTest {
         expect.add(new Student(40, "Surname4"));
         assertThat(res, is(expect));
     }
-
 
     @Test
     public void whenCreateMap() {

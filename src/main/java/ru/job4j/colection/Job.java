@@ -28,7 +28,6 @@ public class Job implements Comparable<Job> {
                 '}';
     }
 
-
     @Override
     public int compareTo(Job anather) {
         return Integer.compare(priority, anather.priority);

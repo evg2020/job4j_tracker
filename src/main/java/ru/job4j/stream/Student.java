@@ -6,32 +6,41 @@ public class Student {
     private int score; // Проходной балл
     private String name; //ФИО
 
-    public Student( int score, String name ){
+    public Student(int score, String name) {
         this.score = score;
         this.name = name;
     }
-    public int getScore(){
+
+    public int getScore() {
         return score;
     }
-    public String getName(){
+
+    public String getName() {
         return  name;
     }
 
-
     @Override
     public String toString() {
-        return "Student{" +
-                "score=" + score +
-                ", name='" + name + '\'' +
+        return "Student{"
+                +
+                "score=" + score
+                +
+                ", name='" + name + '\''
+                +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Student student = (Student) o;
-        return score == student.score &&
+        return score == student.score
+                &&
                 name.equals(student.name);
     }
 

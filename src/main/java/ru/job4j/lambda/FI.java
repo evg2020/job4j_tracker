@@ -8,7 +8,8 @@ public class FI {
         Attachment[] atts = {
                 new Attachment("image 1", 20),
                 new Attachment("image 3", 200),
-                new Attachment("image 2", 100),};
+                new Attachment("image 2", 100)
+        };
 
         // Было с ананимным классом
        /* Comparator<Attachment> comparator = new Comparator<Attachment>() {
@@ -24,10 +25,8 @@ public class FI {
         };
 
         Arrays.sort(atts, comparator);
-        for(Attachment att : atts){
+        for (Attachment att : atts) {
             System.out.println(att.toString());
         }
-
-
     }
 }

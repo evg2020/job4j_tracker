@@ -25,8 +25,12 @@ public class Attachment {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Attachment that = (Attachment) o;
         return name.equals(that.name);
     }
@@ -38,9 +42,12 @@ public class Attachment {
 
     @Override
     public String toString() {
-        return "Attachment{" +
-                "name='" + name + '\'' +
-                ", size=" + size +
+        return "Attachment{"
+                +
+                "name='" + name + '\''
+                +
+                ", size=" + size
+                +
                 '}';
     }
 }

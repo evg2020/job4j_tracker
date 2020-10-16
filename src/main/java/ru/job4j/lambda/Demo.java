@@ -12,5 +12,4 @@ public class Demo {
         System.out.println(f1.andThen(f2).andThen(f3).apply("ABCD"));
     }
 
-
 }

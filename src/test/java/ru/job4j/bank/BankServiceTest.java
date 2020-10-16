@@ -30,7 +30,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertNull(bank.findByPassport("333").orElse(null));// проверка на нулл
+        assertNull(bank.findByPassport("333").orElse(null)); // проверка на нулл
     }
 
     @Test
@@ -52,7 +52,6 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new Account("5555", 150D));
         assertNull(bank.findByRequisite("3434", "111").orElse(null));
     }
-
 
     @Test
     public void whenEnterInvalidPassport() {

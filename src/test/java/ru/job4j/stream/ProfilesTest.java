@@ -10,7 +10,6 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 
-
 public class ProfilesTest {
 
     private List<Profile> proff = new ArrayList<>();
@@ -30,7 +29,6 @@ public class ProfilesTest {
         uniq.add(new Address("Moscow", "Lenina", 1, 1));
         uniq.add(new Address("Moscow02", "Lenina02", 2, 2));
     }
-
 
     @Test
     public void whenCollectAddress() {
