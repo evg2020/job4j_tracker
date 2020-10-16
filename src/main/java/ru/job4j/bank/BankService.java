@@ -90,8 +90,9 @@ public class BankService {
                 account01.setBalance(changedBalance);
                 res = true;
             }
-            return res;
+
         }
+        return res;
     }
 
     public static void main(String[] args) {
