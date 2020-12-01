@@ -1,9 +1,5 @@
 package ru.job4j.bank;
 
-import ru.job4j.oop.Object;
-
-import javax.management.MBeanRegistration;
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,11 +23,11 @@ public class BankService {
     }
 
     public Optional<User> findByPassport(String passport) {
-//        User user = null;
+//        User user = null; //Чтобы обернуть null используем метод ниже
         Optional<User> res = Optional.empty();
         for (User user01 : users.keySet()) {
             if (user01.getPassport().equals(passport)) {
-                res = Optional.of(user01);
+                res = Optional.of(user01); //Чтобы обернуть not-null значение используем метод
                 break;
             } else {
                 System.out.println("нет пользователя с таким паспортом");
@@ -98,9 +94,12 @@ public class BankService {
     public static void main(String[] args) {
         BankService bank = new BankService();
         bank.addUser((new User("2222", "Petr Arsentev")));
-        Optional<User> opt = bank.findByPassport("22");
-
+        Optional<User> opt = bank.findByPassport("222");
         System.out.println(opt);
+
+        System.out.println();
+
+
         bank.addAccount("2222", new Account("5555", 150D));
         Optional<Account> optionalAccount = bank.findByRequisite("2222", "5551");
         System.out.println(optionalAccount.toString());
