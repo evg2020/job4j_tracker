@@ -10,12 +10,11 @@ import java.util.Comparator;
 
 public class StudentLevel {
     public static List<Student> levelOf(List<Student> students, int bound) {
-return students.stream()
-        .filter(st -> st != null)
-//        .flatMap(Stream::ofNullable)
-        .sorted((left, right) -> right.getName().compareTo(left.getName()))
-        .takeWhile(st -> st.getScore() > bound)
-        .collect(Collectors.toList());
+        return students.stream()
+                .filter(st -> st != null)
+                .sorted((left, right) -> right.getName().compareTo(left.getName()))
+                .takeWhile(st -> st.getScore() > bound)
+                .collect(Collectors.toList());
     }
 
 }

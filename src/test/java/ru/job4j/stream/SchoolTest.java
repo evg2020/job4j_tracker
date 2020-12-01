@@ -44,8 +44,8 @@ public class SchoolTest {
     @Test
     public void whenCollectClassB() {
         School sc = new School();
-        Predicate<Student> predictB = (x) -> x.getScore() < 70 && x.getScore() >= 50;
-        List<Student> res = sc.collect(students, predictB);
+        Predicate<Student> predict = (x) -> x.getScore() < 70 && x.getScore() >= 50;
+        List<Student> res = sc.collect(students, predict);
         List<Student> expect = new ArrayList<>();
         expect.add(new Student(50, "Surname5"));
         expect.add(new Student(60, "Surname6"));

@@ -67,23 +67,5 @@ public class JobSorterTest {
                 new Job("fix bug", 4));
         assertThat(result, is(expect));
     }
-
-    @Test
-    public void sortByPriorDecr() {
-
-        List<Job> result = Arrays.asList(
-                new Job("aFix bug", 1),
-                new Job("fix bug", 4),
-                new Job("Fix bug", 2),
-                new Job("A task", 2));
-        Comparator<Job> combPriorDec = new JobDescByPriorityDecrease();
-        Collections.sort(result, combPriorDec);
-        List<Job> expect = Arrays.asList(
-                new Job("fix bug", 4),
-                new Job("Fix bug", 2),
-                new Job("A task", 2),
-                new Job("aFix bug", 1));
-
-        assertThat(result, is(expect));
-    }
 }
+

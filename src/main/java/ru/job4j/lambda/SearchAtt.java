@@ -40,9 +40,9 @@ public class SearchAtt {
         List<Attachment> list = Arrays.asList(
                 new Attachment("AA bugg", 11),
                 new Attachment("bug", 22),
-                new Attachment("zz bug", 133)
+                new Attachment("zz bugs", 133)
         );
-        List<Attachment> lists = filter(list, "bug");
+        List<Attachment> lists = filter(list, "bugs");
         for (Attachment at : lists) {
             System.out.println(at);
         }

@@ -1,4 +1,5 @@
 package ru.job4j.colection;
+import java.util.Collection;
 import java.util.Comparator;
 
 public class JobByNameDecrease implements Comparator<Job> {

@@ -3,7 +3,7 @@ package ru.job4j.list;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//обратную конвертацию двухмерного массива в одномерный список.
 public class ConvertMatrix2List {
     public List<Integer> toList(int[][] array) {
         List<Integer> list = new ArrayList<>();
